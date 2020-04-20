@@ -1,0 +1,93 @@
+.logo{
+    display: inline-block;
+    height: 140px;
+}
+
+.logo img{
+    height: 100%;
+}
+
+.menu-container{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    height: 140px;
+    width: 100%;
+    
+}
+.nav-container button{
+    border: none;
+    background-color: #fff;
+    color: #373E44;
+    font-size: 14px;
+    padding: 10px 5px;
+    transition: background 0.5s;
+    transition: color 0.5s;
+}
+.nav-container button:hover{
+    background: #373E44;
+    color: #fff;
+}
+
+.nav-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center ;
+    max-width: 680px;
+    min-width: 675px;
+}
+
+.contact-container{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: #988364;
+}
+.contact-container b{
+    margin: 0px 5px;
+}
+
+.contact-container .instagram-color{
+    color:#373E44;
+}
+.contact-container .instagram-color b{
+    font-size: 28px;
+}
+
+.button-client{
+    display: flex;
+    align-items: center;
+}
+
+.button-client button{
+    border-style: outset;
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 15px;
+    color:#988365;
+    background-color: #fff;
+    transition: background 0.5s;
+    transition: color 0.5s;
+}
+.button-client button:hover{
+    background: #988365;
+    color: #fff;
+}
+
+.image-container img{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.image-container h1{
+    position: absolute;
+    color: #fff;
+    width: 840px;
+    font-size: 46px;
+    top: 400px;
+    left: 150px;
+}
