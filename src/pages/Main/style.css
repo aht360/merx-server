@@ -16,6 +16,7 @@
     
 }
 .nav-container button{
+    margin: 0px 10px;
     border: none;
     background-color: #fff;
     color: #373E44;
@@ -34,8 +35,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center ;
-    max-width: 680px;
-    min-width: 675px;
+    max-width: 800px;                  /* se quiser mudar de novo 680px max e 675 min */
+    min-width: 790px;
 }
 
 .contact-container{
@@ -76,18 +77,20 @@
     color: #fff;
 }
 
-.image-container img{
-    display: inline-block;
-    position: relative;
+.imageBg-container {
+    background-image: url('../../Assets/imageBg.jpg');
+    background-position: center;
+    background-size: cover ;
     width: 100%;
     height: 600px;
 }
 
-.image-container h1{
+.imageBg-container h1{
     position: absolute;
     color: #fff;
     width: 840px;
     font-size: 46px;
     top: 400px;
     left: 150px;
+    
 }

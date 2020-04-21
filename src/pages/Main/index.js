@@ -3,7 +3,6 @@ import './style.css'
 import logoImg from '../../Assets/logo.jpg'
 import {FiPhone,FiInstagram} from 'react-icons/fi'
 import {FaWhatsapp} from 'react-icons/fa'
-import img from '../../Assets/image.jpg'
 
 
 
@@ -33,11 +32,9 @@ export default function Main(){
                     </div>
 
             </div>
-            <div className="image-container">
-                <img src={img} alt='main'></img>                    
+            <div className="imageBg-container">                 
                 <h1>Somos um time com o objetivo de levar excelência para nossos clientes e parceiros</h1>
             </div>
-            <b> aaa</b>
         </div>
     )
 }
