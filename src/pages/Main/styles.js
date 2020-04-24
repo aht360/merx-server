@@ -4,7 +4,7 @@ export const MidiaBar = styled.div`
     background: #373E44;
     width:100%;
     color: #D6D8D8;
-    font-size: 14px;
+    font-size: 1rem;
     height: 47px;
     display: flex;
     align-items: center;
@@ -31,6 +31,8 @@ export const MidiaBar = styled.div`
         background:#B1945E;
     }
 `
+
+
 export const MapIcon = styled.div`
         margin: 0px 0px 0px 40px;
 `
@@ -76,7 +78,7 @@ export const MenuButton = styled.button`
             background:#373E44;
             color:#fff;
         } 
-`
+`   
 
 export const SimulationButton = styled.button`
     border: 1px solid #373E44;
@@ -96,7 +98,7 @@ export const SimulationButton = styled.button`
     }   
 `
 export const VideoContainer = styled.div`
-    position:absolute;
+    position:static;
     margin-top:60px;
     width:100%;
     display:flex;
@@ -107,23 +109,63 @@ export const VideoContainer = styled.div`
         width:85%;
         object-fit: fill;
     }
-    h1{
-        position: absolute;
-        color: #fff;
-        width: 750px;
-        font-size: 36px;
-        top: 200px;
-        left: 150px;
-        text-align: center;
+
+`
+
+export const InfoContainer = styled.div`
+    margin-top:3em;
+    margin-left:10em;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    div{
+        display:flex;
+        justify-content: center;
+        align-items: center;
     }
 `
-export const VideoBox = styled.div`
-    width:100%;
-    height:500px;
+export const InfoText= styled.div`
+    width: 700px;
+    text-align: center;
 `
-export const InfoContainer = styled.div`
-    margin-top:50px;
+export const Container =styled.div`
+    margin-top:6em;
+    background-color: ${props=>props.BGcolor};
+    height: ${props=>`${props.height}em`};
+    width:100%;
+    font-size:${props=>`${props.fontSize}em`};
     display:flex;
-    justify-content: center;
-    align-items: center;
+    justify-content:space-evenly;
+    align-items:center;
+    text-align:center;
+    
+    img{
+        width:80%;
+        height:80%;
+    }
+`
+
+export const TextBoxContainer = styled.div`
+    margin-top: 4em;
+    width:50%;
+    height:100%;
+    text-align: center;
+    color: ${props=>props.fontColor};
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+`
+export const Button = styled.button`
+    border: 1px solid ${props=>props.BorderColor};
+    color: ${props=>props.fontColor};
+    background-color:${props=>props.Color};
+    padding: 10px;
+    transition: background 0.5s;
+    &:hover{
+        border: 1px solid ${props=>props.BorderColorHover};
+        background:${props=>props.ColorHover};;
+        color:${props=>props.fontColorHover};;
+    }   
 `
