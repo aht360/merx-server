@@ -122,8 +122,8 @@ export const VideoBox = styled.div`
     height:500px;
 `
 export const InfoContainer = styled.div`
+    margin-top:50px;
     display:flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    background-color:black;
 `

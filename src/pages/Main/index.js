@@ -17,7 +17,10 @@ export default function Main(){
                     </VideoContainer>
                     <VideoBox></VideoBox>
                     <InfoContainer>
-                        <InfoBoard></InfoBoard>
+                        <div>
+                            <InfoBoard></InfoBoard>
+                        </div>
+                        
                     </InfoContainer>
                     
                     
