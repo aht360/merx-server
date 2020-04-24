@@ -9,7 +9,7 @@ export default function Main(){
             <div className="index-container">
                 <NavBar></NavBar>
                     <VideoContainer>
-                        <video loop autoplay muted id="video">
+                        <video preload="true" autoplay="autoplay" muted loop >
                             <source src={Video} type="video/mp4"/>
                         </video>
                         <h1>Somos um time com o objetivo de levar excelência para nossos cliente e parceiros</h1>
@@ -18,7 +18,6 @@ export default function Main(){
                     <VideoBox></VideoBox>
                     <InfoContainer>
                         <InfoBoard></InfoBoard>
-                        <span>asdad</span>
                     </InfoContainer>
                     
                     
