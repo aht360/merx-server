@@ -111,31 +111,14 @@ export const VideoContainer = styled.div`
     }
 
 `
-
-export const InfoContainer = styled.div`
-    margin-top:3em;
-    margin-left:10em;
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    
-    div{
-        display:flex;
-        justify-content: center;
-        align-items: center;
-    }
-`
-export const InfoText= styled.div`
-    width: 700px;
-    text-align: center;
-`
 export const Container =styled.div`
-    margin-top:6em;
+    margin-top:5em;
     background-color: ${props=>props.BGcolor};
     height: ${props=>`${props.height}em`};
     width:100%;
     font-size:${props=>`${props.fontSize}em`};
     display:flex;
+    flex-direction:row;
     justify-content:space-evenly;
     align-items:center;
     text-align:center;
@@ -152,20 +135,42 @@ export const TextBoxContainer = styled.div`
     height:100%;
     text-align: center;
     color: ${props=>props.fontColor};
+    font-size: ${`${props=>props.fontSize}em`};
     display:flex;
     flex-direction:column;
-    justify-content:space-around;
+    justify-content:space-evenly;
     align-items:center;
+    p{
+        font-size:1.4em;
+    }
 `
 export const Button = styled.button`
-    border: 1px solid ${props=>props.BorderColor};
+    border: 2px solid ${props=>props.BorderColor};
     color: ${props=>props.fontColor};
     background-color:${props=>props.Color};
     padding: 10px;
     transition: background 0.5s;
     &:hover{
-        border: 1px solid ${props=>props.BorderColorHover};
-        background:${props=>props.ColorHover};;
-        color:${props=>props.fontColorHover};;
+        border: 2px solid ${props=>props.BorderColorHover};
+        background:${props=>props.ColorHover};
+        color:${props=>props.fontColorHover};
     }   
+`
+export const H1  = styled.h1`
+    color: ${props=>props.Color};
+    font-size: ${`${props=>props.Size}em`}
+`
+export const DivMap = styled.div`
+    margin-top:13em;
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items: center;
+
+
+    img{
+        width: 85%;
+        height: 90%;
+    }
 `
