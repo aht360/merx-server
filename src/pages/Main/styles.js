@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const MidiaBar = styled.div`
     background: #373E44;
     width:100%;
@@ -58,10 +57,12 @@ export const MenuContainer = styled.div`
     align-items:center;
     height: 80px;
 
-    img{
-        height:100%;
+    a{
+        height:80px;
     }
-
+    img{
+        height:100%
+    }
 `
 export const MenuButton = styled.button`
         border:none;
@@ -94,5 +95,35 @@ export const SimulationButton = styled.button`
     color:#373E44;
     }   
 `
+export const VideoContainer = styled.div`
+    position:absolute;
+    margin-top:60px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    height:400px;
 
-
+    video{
+        width:85%;
+        object-fit: fill;
+    }
+    h1{
+        position: absolute;
+        color: #fff;
+        width: 750px;
+        font-size: 36px;
+        top: 200px;
+        left: 150px;
+        text-align: center;
+    }
+`
+export const VideoBox = styled.div`
+    width:100%;
+    height:500px;
+`
+export const InfoContainer = styled.div`
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:black;
+`

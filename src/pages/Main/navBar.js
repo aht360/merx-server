@@ -26,14 +26,13 @@ export default function NavBar(){
             </MidiaBar>
             
             <MenuContainer>
-                <img src={Logo} alt="Logo Merx"/>
+                <a href="/"><img src={Logo} alt="Logo Merx"/></a>
                 <div>
                     <MenuButton>MERCADO LIVRE ENERGIA</MenuButton>
                     <MenuButton>AUTOPRODUÇÃO DE ENERGIA</MenuButton>
                     <MenuButton>NOSSOS PROJETOS</MenuButton>
                     <SimulationButton>SIMULE SUA FATURA</SimulationButton>
-                </div>
-                
+                </div>     
             </MenuContainer>
 
         </div>
