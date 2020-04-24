@@ -1,15 +1,12 @@
 import React from 'react';
 import Main from './pages/Main/index.js'
-import GlobalStyles from './styles.js'
+import './styles.css'
 
 
 
 function App() {
   return (
-    <>
-    <GlobalStyles/>
       <Main/>
-    </>
       
   );
 }
