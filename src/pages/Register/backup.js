@@ -35,13 +35,9 @@ export default function Main(){
                         </div>
                     </div>     
                 </div>
-            </div>
-            <div className="imageBg-container">    
-                <video loop autoplay autoPlay id="bg-video" > 
-                    <source src={video} type="video/mp4"/>    
-                </video>             
+            </div>  
+         
                 <h1>Somos um time com o objetivo de levar excelência para nossos clientes e parceiros</h1>
-            </div>
             <div className="info-container">
                 <p>Conheça os agentes do Ambiente</p><p>de Comercialização Livre</p>
                 <div className="info-tab">

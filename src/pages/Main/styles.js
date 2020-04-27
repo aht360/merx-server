@@ -1,176 +1,256 @@
 import styled from 'styled-components'
 
-export const MidiaBar = styled.div`
-    background: #373E44;
+export const Containers = styled.div`
     width:100%;
-    color: #D6D8D8;
-    font-size: 1rem;
-    height: 47px;
-    display: flex;
+    height:${props=>props.height};
+    background-color:${props=>props.BgColor};
+    color: ${props=>props.color};
+    display:flex;
+    justify-content:space-evenly;
     align-items: center;
-    justify-content: space-between;
 
-    div{   
-        display: flex;
-        justify-content:space-between;
-        align-items:center;
-    }
-    span{
-        margin: 0px 20px 0px 5px;
-    }
-    button{
-        background-color: #D6D8D8;
-        color:#B1945E;
-        border:none;
-        border-radius: 25px;
-        padding: 10px 15px; 
-        transform: background 0.5s;
-    }
-    button:hover{
-        color: #D6D8D8;
-        background:#B1945E;
-    }
 `
-
-
-export const MapIcon = styled.div`
-        margin: 0px 0px 0px 40px;
-`
-export const ButtonContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+export const MidiaContainer = styled.div`
+    width:96%;
+    display:flex;
+    justify-content:space-between;
     align-items:center;
-    margin:0px 20px;
-
     div{
-        display:flex;
+        display: flex;
+        justify-content: space-around;
         align-items: center;
-        margin: 0px 10px;
     }
-    a{
-        margin: 5px;
+    .phones{
+        div{
+            margin:0px 15px;
+        }
+    }    
+    button{
+        margin:0px 5px;
     }
 `
 export const MenuContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items:center;
-    height: 80px;
-
-    a{
-        height:80px;
-    }
-    img{
-        height:100%
-    }
-`
-export const MenuButton = styled.button`
-        border:none;
-        padding: 8px 10px;
-        margin:0px 10px;
-        color:#373E44;
-        background: #fff;
-        transition: background 0.5s;
-        
-        &:hover{
-            background:#373E44;
-            color:#fff;
-        } 
-`   
-
-export const SimulationButton = styled.button`
-    border: 1px solid #373E44;
-    border-radius:25px;
-    padding:8px 10px;
-    margin: 0px 10px;
-    color: #fff;
-    background: #373E44;
-    transition: background 0.5s;
-
-    &:hover{
-    border: 1px solid #373E44;
-    border-radius: 25px;
-    background:#fff;
-    border: 1px solid #373E44;
-    color:#373E44;
-    }   
-`
-export const VideoContainer = styled.div`
-    position:static;
-    margin-top:60px;
     width:100%;
-    display:flex;
-    justify-content:center;
-    height:400px;
-
-    video{
-        width:85%;
-        object-fit: fill;
-    }
-
-`
-export const Container =styled.div`
-    margin-top:5em;
-    background-color: ${props=>props.BGcolor};
-    height: ${props=>`${props.height}em`};
-    width:100%;
-    font-size:${props=>`${props.fontSize}em`};
-    display:flex;
-    flex-direction:row;
-    justify-content:space-evenly;
-    align-items:center;
-    text-align:center;
-    
-    img{
-        width:80%;
-        height:80%;
-    }
-`
-
-export const TextBoxContainer = styled.div`
-    margin-top: 4em;
-    width:50%;
     height:100%;
-    text-align: center;
-    color: ${props=>props.fontColor};
-    font-size: ${`${props=>props.fontSize}em`};
     display:flex;
-    flex-direction:column;
-    justify-content:space-evenly;
-    align-items:center;
-    p{
-        font-size:1.4em;
-    }
-`
-export const Button = styled.button`
-    border: 2px solid ${props=>props.BorderColor};
-    color: ${props=>props.fontColor};
-    background-color:${props=>props.Color};
-    padding: 10px;
-    transition: background 0.5s;
-    &:hover{
-        border: 2px solid ${props=>props.BorderColorHover};
-        background:${props=>props.ColorHover};
-        color:${props=>props.fontColorHover};
-    }   
-`
-export const H1  = styled.h1`
-    color: ${props=>props.Color};
-    font-size: ${`${props=>props.Size}em`}
-`
-export const DivMap = styled.div`
-    margin-top:13em;
-    width:50%;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
+    justify-content: space-evenly;
     align-items: center;
 
+    img,a{
+        height:100%;
+        background-color: yellow;
+    }
+    div{
+        width:60%;
+        display: flex;
+        justify-content:space-evenly;
+    }
+`
+export const BoxContainer = styled.div`
+    margin-top: 3rem;
+    width:100%;
+    height:${props=>props.height};
+    background-color:${props=>props.BgColor};
+    color: ${props=>props.color};
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    div{
+        width:40%;
+        height:80%;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-evenly;
+        align-items:center;
+        text-align:justify;
+    }
+    img{
+        width:80%;
+        height:100%;
+    }
+    h1{
+        color:${props=>props.H1Color};
+    }
+    .be-partner{
+        border-top:1px solid black;
+        border-bottom:1px solid black;
+    }
+`
+export const ButtonRound = styled.button`
+    border: 1px solid ${props=>props.BorderColor};
+    background:${props=>props.BgColor};
+    color:${props=>props.Color};
+    padding: 5px 10px;
+    border-radius:25px;
+    cursor: pointer;
+    transition: background 500ms;
+    :hover{
+        border-color:${props=>props.BorderColorHover};
+        color:${props=>props.ColorHover};
+        background-color:${props=>props.BgColorHover};
+    }
+`
+export const ButtonMenu = styled.button`
+    border:1px solid #6D7272 ;
+    color: #6D7272;
+    background-color:#fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 500ms;
+    :hover{
+        background-color:#6D7272 ;
+        color: #fff;
+    }
+`
+export const ButtonFatura = styled.button`
+    border:1px solid #fff ;
+    color: #fff;
+    background-color:#B0935D;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 500ms,;
+    :hover{
+        border:1px solid #B0935D;
+        background:#fff ;
+        color: #B0935D;
+    }
+`
+export const VideoContainer = styled.div`
+    margin-top: 3rem;
+    width:100%;
+    display:flex;
+    justify-content: space-evenly;
+    height:400px;
+    background-color:#FFF;
+    video{
+        width:80%;
+        object-fit:fill;
+    }
+`
+export const ContainersSquares = styled.div`
+    margin-top: 3rem;
+    width:100%;
+    height:${props=>props.height};
+    background-color:${props=>props.BgColor};
+    color: ${props=>props.color};
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    margin-bottom:5rem;
 
     img{
-        width: 85%;
-        height: 90%;
+        width:100%;
+        height:120%;
     }
+    h4{
+        color:#343E45;
+    }
+    div{
+        margin-left:20px;
+        font-size:1.5rem;
+        height:100%;
+        width:50%;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-evenly;
+        text-align:justify;
+        color:#fff;
+    }
+    .map{
+        margin-top:10rem;
+    }
+`
+
+export const SolarContainer = styled.div`
+    width:100%;
+    height:680px;
+    color: #343E45;
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+    font-size:1.2rem;
+    div{
+        width:40%;
+        height:100%;
+        display:flex;
+        flex-direction: column;
+        justify-content:space-evenly;
+
+    }
+    img{
+        width:40%;
+        height:50%;
+        box-shadow: -15px -15px 15px rgba(0,0,0,0.5);
+    }
+    h1{
+        color:#B0935D;
+    }
+`
+export const NewsLetter = styled.div`
+    width: 100%;
+    height:400px;
+    display:flex;
+    justify-content: space-evenly;
+    margin-bottom: -15rem;
+    .newsletter{
+        width:100%;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items:center;
+        font-size:1.5rem;
+        color:#343E45;
+        width:90%;
+        height:100%;
+        background-color: #D6D8D8;
+
+        .newsletter-title{
+            width:90%;
+            display:flex;
+            align-items:center;
+            span{
+                margin-left: 10px;
+            }
+        }
+        input{
+            width:43%;
+            height:50px;
+            font-size:1.4rem;
+            background-color:#D6D8D8;
+            border-radius: 5px;
+            border:1px solid #343E45;
+        }
+        form{
+            width:100%;
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: space-evenly;
+        }    
+        button{
+            border:1px solid #fff ;
+            color: #fff;
+            background-color:#B0935D;
+            padding: 20px 100px;
+            cursor: pointer;
+            transition: background 500ms;
+            :hover{
+                border:1px solid #B0935D;
+                background:#fff ;
+                color: #B0935D;
+            }
+        }
+    }
+    h1{
+        font-size:3rem;
+    }
+` 
+export const Footer = styled.div`
+    width:100%;
+    height:15vh;
+    background:#343E45;
+    border-top:1px solid #6D7272;
+    color:#B0935D;
+    display:flex;
+    justify-content:center;
+    align-items: center;
 `
