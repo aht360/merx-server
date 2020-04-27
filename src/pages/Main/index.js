@@ -78,7 +78,7 @@ export default function Main(){
                             Os principais atrativos da autoprodução são:<br></br>
                             <lu><br></br>
                                 <li>Isenção de encargos setoriais</li>
-                                <li>nao rocolhe ICMS sobre energia produzida entre agentes de mesmo CNPJ.
+                                <li>Não rocolhe ICMS sobre energia produzida entre agentes de mesmo CNPJ.
                                 (É necessário verificar a legislação de cada estado).
                                 </li>
                                 <li>O autoprodutor diminui sua exposição a variações de preços  da energia eletrica.</li>
