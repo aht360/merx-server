@@ -203,7 +203,7 @@ export const SolarContainer = styled.div`
         height:50%;
         box-shadow: -15px -15px 15px rgba(0,0,0,0.5);
     }
-    h1{
+    h2{
         color:#B0935D;
     }
 `
