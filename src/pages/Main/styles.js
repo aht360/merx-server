@@ -114,7 +114,7 @@ export const ButtonMenu = styled.button`
     border-color:${props=>props.BorderColor};
     color: #6D7272;
     background-color:#fff;
-    padding: 5px 10px;
+    padding: 10px 15px;
     cursor: pointer;
     transition: background 500ms;
     :hover{

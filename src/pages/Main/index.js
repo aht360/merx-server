@@ -71,11 +71,12 @@ export default function Main(){
                     <img src={Solar} alt="Empresa" className="solar-photo"/>
 
                     <div>
-                        <h1>Quer ser autoprodutor de energia elétrica?</h1>
+                        
                         <span>
+                            <h1>Quer ser autoprodutor de energia elétrica?</h1><br></br>
                         <p>O Autoprodutor é um agente com concessão, permissão ou autorização para produzir energia destinada a seu uso exclusivo, podendo comercializar eventual excedente de energia desde que autorizado pela Aneel.</p>
-                            Os principais atrativos da autoprodução são:
-                            <lu>
+                            Os principais atrativos da autoprodução são:<br></br>
+                            <lu><br></br>
                                 <li>Isenção de encargos setoriais</li>
                                 <li>nao rocolhe ICMS sobre energia produzida entre agentes de mesmo CNPJ.
                                 (É necessário verificar a legislação de cada estado).
