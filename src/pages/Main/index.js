@@ -102,7 +102,7 @@ export default function Main(){
                 <NewsLetter>
                     <div className="newsletter">
                         <div className="newsletter-title">
-                            <h1>NewsLetter - </h1><span>Fiquei por dentro das novidades e receba promoções exclusivas.</span>
+                            <h1>NewsLetter - </h1><span>Fique por dentro das novidades e receba promoções exclusivas.</span>
                         </div>
 
                         <form id="form-email">
