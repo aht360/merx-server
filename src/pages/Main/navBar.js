@@ -2,6 +2,7 @@ import React from 'react'
 import {Containers,MidiaContainer,ButtonRound,ButtonMenu,MenuContainer,ButtonFatura} from './styles.js'
 import {FaInstagramSquare,FaLinkedin,FaMapMarkerAlt, FaPhoneAlt} from 'react-icons/fa'
 import {IoLogoWhatsapp} from 'react-icons/io'
+import {GiHamburgerMenu} from 'react-icons/gi'
 import {BsFillPersonFill} from 'react-icons/bs'
 import Logo from '../../Assets/logo.jpg'
 
@@ -29,12 +30,16 @@ export default function NavBar(){
             <Containers height="80px" BgColor="#FFF" color="#343E45">
                 <MenuContainer>
 
-                        <a href="/"><img src={Logo} alt="Logo Merx"/></a>                    
+                    <a href="/"><img src={Logo} alt="Logo Merx"/></a>                    
                     <div className="menu">
-                        <ButtonMenu>MERCADO LIVRE ENERGIA</ButtonMenu>
-                        <ButtonMenu>AUTOPRODUÇÃO DE ENERGIA</ButtonMenu>
-                        <ButtonMenu>NOSSOS PROJETOS</ButtonMenu>
-                        <ButtonFatura>SIMULE SUA FATURA</ButtonFatura>
+                        <ButtonMenu BorderColor="#fff">MERCADO LIVRE ENERGIA</ButtonMenu>
+                        <ButtonMenu BorderColor="#fff">AUTOPRODUÇÃO DE ENERGIA</ButtonMenu>
+                        <ButtonMenu BorderColor="#fff">NOSSOS PROJETOS</ButtonMenu>
+                        <ButtonFatura BorderColor="#fff">SIMULE SUA FATURA</ButtonFatura>
+                            <div className="hamburger">
+                                <GiHamburgerMenu size={18}></GiHamburgerMenu>
+                            </div>
+                        
                     </div>    
                     
                 </MenuContainer>

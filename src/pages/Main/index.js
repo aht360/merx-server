@@ -34,19 +34,16 @@ export default function Main(){
                     </BoxContainer>
                     <BoxContainer BgColor="#FFF" height="480px" H1Color="">
                         <div>
-                            <h1>Mercado Livre de Energia</h1>
+                            <h1>Autoprodutor</h1>
                             <span>
-                                O mercado livre é um ambiente de comercialização onde o consumidor pode escolher seu fornecedor de energia de energia, além de receber vários incentivos e até vender sua energia excedente.
-                                No mercado livre, as economias médias chegam a 30% dependendo do perfil de consumo e outras condições específicas de cada consumidor.
+                            Os autoprodutores são outra classe de agente que atua no ambiente de contratação livre, 
+                            eles são consumidores que recebem a concessão ou autorização para produção de energia elétrica destinada ao seu próprio consumo.
                             </span>
                             <ButtonMenu>Saiba mais</ButtonMenu>                            
                         </div>
 
                         <div><img src={ImgAutoPro} alt="Autoprodutor"/></div>
                     </BoxContainer>
-                    <Grid container>
-                        <Grid item xs={12} sm={12}>
-
 
                     <ContainersSquares BgColor="#B0935D" height="480px" H1Color="#B0935D">
 
@@ -69,14 +66,14 @@ export default function Main(){
                             <img src={Map} alt="mapa"/>
                         </div>
                     </ContainersSquares>
-                        </Grid>
-                    </Grid>
+
                 <SolarContainer>
                     <img src={Solar} alt="Empresa" className="solar-photo"/>
 
                     <div>
                         <h1>Quer ser autoprodutor de energia elétrica?</h1>
                         <span>
+                        <p>O Autoprodutor é um agente com concessão, permissão ou autorização para produzir energia destinada a seu uso exclusivo, podendo comercializar eventual excedente de energia desde que autorizado pela Aneel.</p>
                             Os principais atrativos da autoprodução são:
                             <lu>
                                 <li>Isenção de encargos setoriais</li>
@@ -95,7 +92,10 @@ export default function Main(){
                 <BoxContainer color="#B0935D" height="280px">
                     <div className="be-partner">
                         <h1>Faça parte do time MERX</h1>
-                        <ButtonFatura>Quero ser um parceiro</ButtonFatura>
+                        <div className="be-partner-buttons">
+                            <ButtonFatura>Quero ser um parceiro</ButtonFatura>
+                            <ButtonFatura>Quero ser um cliente</ButtonFatura>
+                        </div>
                     </div>
                 </BoxContainer>
 
@@ -106,8 +106,8 @@ export default function Main(){
                         </div>
 
                         <form id="form-email">
-                            <input type="text" placeholder="Nome"></input>
-                            <input type="text" placeholder="Email"></input> 
+                            <input type="text" placeholder=" Nome"></input>
+                            <input type="text" placeholder=" Email"></input> 
                         </form>               
                             <button type="submit" form="form-email">Enviar</button> 
                     </div>

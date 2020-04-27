@@ -45,6 +45,17 @@ export const MenuContainer = styled.div`
         display: flex;
         justify-content:space-evenly;
     }
+
+    .hamburger{
+        visibility: hidden;
+        width:3%;
+        cursor: pointer;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background: blue;
+    }
+
 `
 export const BoxContainer = styled.div`
     margin-top: 3rem;
@@ -63,6 +74,7 @@ export const BoxContainer = styled.div`
         justify-content:space-evenly;
         align-items:center;
         text-align:justify;
+        font-size:1.4rem;
     }
     img{
         width:80%;
@@ -74,6 +86,13 @@ export const BoxContainer = styled.div`
     .be-partner{
         border-top:1px solid black;
         border-bottom:1px solid black;
+    }
+    .be-partner-buttons{
+        width:100%;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-evenly;
+        align-items:center;
     }
 `
 export const ButtonRound = styled.button`
@@ -91,19 +110,21 @@ export const ButtonRound = styled.button`
     }
 `
 export const ButtonMenu = styled.button`
-    border:1px solid #6D7272 ;
+    border:1px solid;
+    border-color:${props=>props.BorderColor};
     color: #6D7272;
     background-color:#fff;
     padding: 5px 10px;
     cursor: pointer;
     transition: background 500ms;
     :hover{
+        border:1px solid #fff;
         background-color:#6D7272 ;
         color: #fff;
     }
 `
 export const ButtonFatura = styled.button`
-    border:1px solid #fff ;
+    border:1px solid #fff;
     color: #fff;
     background-color:#B0935D;
     padding: 10px 15px;
