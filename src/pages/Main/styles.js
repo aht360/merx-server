@@ -10,53 +10,6 @@ export const Containers = styled.div`
     align-items: center;
 
 `
-export const MidiaContainer = styled.div`
-    width:96%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    div{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-    .phones{
-        div{
-            margin:0px 15px;
-        }
-    }    
-    button{
-        margin:0px 5px;
-    }
-`
-export const MenuContainer = styled.div`
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content: space-evenly;
-    align-items: center;
-
-    img,a{
-        height:100%;
-        background-color: yellow;
-    }
-    div{
-        width:60%;
-        display: flex;
-        justify-content:space-evenly;
-    }
-
-    .hamburger{
-        visibility: hidden;
-        width:3%;
-        cursor: pointer;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        background: blue;
-    }
-
-`
 export const BoxContainer = styled.div`
     margin-top: 3rem;
     width:100%;
@@ -93,20 +46,6 @@ export const BoxContainer = styled.div`
         flex-direction:row;
         justify-content:space-evenly;
         align-items:center;
-    }
-`
-export const ButtonRound = styled.button`
-    border: 1px solid ${props=>props.BorderColor};
-    background:${props=>props.BgColor};
-    color:${props=>props.Color};
-    padding: 5px 10px;
-    border-radius:25px;
-    cursor: pointer;
-    transition: background 500ms;
-    :hover{
-        border-color:${props=>props.BorderColorHover};
-        color:${props=>props.ColorHover};
-        background-color:${props=>props.BgColorHover};
     }
 `
 export const ButtonMenu = styled.button`

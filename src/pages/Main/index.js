@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from './navBar.js'
+import NavBar from '../../Components/NavBar/navBar.js'
 import {VideoContainer,BoxContainer,ButtonFatura,ButtonMenu,ContainersSquares,SolarContainer,NewsLetter,Containers,Footer} from './styles.js'
 import Video from '../../Assets/video.mp4'
 import ImgML from '../../Assets/energyML.jpg'
@@ -13,7 +13,6 @@ export default function Main(){
             <div className="index-container">
 
                 <NavBar></NavBar>
-
                     <VideoContainer>
                         <video src={Video} preload="true" autoplay="autoplay" muted loop >
                             <source type="video/mp4"/>

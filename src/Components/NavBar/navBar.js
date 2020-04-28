@@ -5,6 +5,7 @@ import {IoLogoWhatsapp} from 'react-icons/io'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {BsFillPersonFill} from 'react-icons/bs'
 import Logo from '../../Assets/logo.jpg'
+import {Link} from "react-router-dom";
 
 export default function NavBar(){
     return(
@@ -30,12 +31,12 @@ export default function NavBar(){
             <Containers height="80px" BgColor="#FFF" color="#343E45">
                 <MenuContainer>
 
-                    <a href="/"><img src={Logo} alt="Logo Merx"/></a>                    
+                    <Link to="/"><img src={Logo} alt="Logo Merx"/></Link>                  
                     <div className="menu">
-                        <ButtonMenu BorderColor="#fff">MERCADO LIVRE ENERGIA</ButtonMenu>
-                        <ButtonMenu BorderColor="#fff">AUTOPRODUÇÃO DE ENERGIA</ButtonMenu>
-                        <ButtonMenu BorderColor="#fff">NOSSOS PROJETOS</ButtonMenu>
-                        <ButtonFatura BorderColor="#fff">SIMULE SUA FATURA</ButtonFatura>
+                        <Link to="/mercado_livre"><ButtonMenu BorderColor="#fff">MERCADO LIVRE ENERGIA</ButtonMenu></Link>
+                        <Link to="/autoproducao"><ButtonMenu BorderColor="#fff">AUTOPRODUÇÃO DE ENERGIA</ButtonMenu></Link>
+                        <Link to ="/projetos"><ButtonMenu BorderColor="#fff">NOSSOS PROJETOS</ButtonMenu></Link>
+                       <Link to="/simulacao"><ButtonFatura BorderColor="#fff">SIMULE SUA FATURA</ButtonFatura></Link> 
                             <div className="hamburger">
                                 <GiHamburgerMenu size={18}></GiHamburgerMenu>
                             </div>

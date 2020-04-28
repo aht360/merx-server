@@ -1,12 +1,12 @@
 import React from 'react';
-import Main from './pages/Main/index.js'
+import Routes from './routes'
 import './styles.css'
 
 
 
 function App() {
   return (
-      <Main/>
+      <Routes/>
       
   );
 }
