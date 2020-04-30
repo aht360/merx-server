@@ -3,7 +3,6 @@ import NavBar from '../../Components/NavBar/navBar.js'
 import {VideoContainer,BoxContainer,ButtonFatura,ButtonMenu,ContainersSquares,SolarContainer,NewsLetter,Containers,Footer} from './styles.js'
 import Video from '../../Assets/video.mp4'
 import ImgML from '../../Assets/energyML.jpg'
-import Grid from '@material-ui/core/Grid';
 import ImgAutoPro from '../../Assets/selfProductor.jpg'
 import Map from '../../Assets/map.svg'
 import Solar from '../../Assets/solarpanel.jpg'

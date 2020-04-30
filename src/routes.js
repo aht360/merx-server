@@ -4,7 +4,7 @@ import Main from './pages/Main/index.js'
 import MercadoLivre from './pages/MercadoLivre/index.js'
 import AutoProducao from './pages/Autoproducao/index.js'
 import Projetos from './pages/Projetos/index.js'
-import Simulacao from './pages/Simução/index.js'
+import Simulacao from './pages/Simulação/index.js'
 
 export default function Routes(){
     return(
