@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
 *{
     margin: 0px;
     padding: 0px;
@@ -12,13 +11,13 @@
     color:black;
 }
 body{
-    font: 400px 14px Roboto Condense, sans-serif;
+    font: 400px 14px Raleway, sans-serif;
     background: #fff;
     -webkit-font-smoothing: antialiased;
 }
 
 input,button,textarea{
-    font:400px 18px Roboto, sans-serif;
+    font:400px 18px Raleway, sans-serif;
 }
 
 
