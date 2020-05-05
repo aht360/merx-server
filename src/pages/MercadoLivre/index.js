@@ -7,7 +7,7 @@ export default function MercadoLivre(){
         e.preventDefault();
     
         try {
-            const results = await api.get('simulacao');
+            const results = await api.get('elivelton');
             console.log(results)
           } catch (err) {
             alert('Erro, tente novamente.');
