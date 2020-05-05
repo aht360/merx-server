@@ -1,7 +1,7 @@
 import React from 'react'
 import {Table} from './styled.js'
 
-export default function Simulator(props){
+export default function SimulatorVerde(props){
 
     const inputs = props.inputs
     const ResultCativo = props.resultCat
@@ -79,7 +79,7 @@ export default function Simulator(props){
                     <td>Demanda:</td>
                     <td>{livreDemandaUnica}</td>
                     <td>{tarifaLivreDemandaUnica}</td>
-                    <td>{totalLivreConsumoPonta}</td>
+                    <td>{totalLivreDemanda}</td>
                 </tr>
                 <tr>
                     <td>Consumo Ponta:</td>

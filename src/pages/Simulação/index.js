@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import NavBar from '../../Components/NavBar/navBar.js';
 import { InputContainer } from './styled.js';
 import api from '../../Services/api.js';
-import Simulator from './simulator.js';
+import SimulatorVerde from './SimulatorVerde.js';
+import SimulatorAzul from './SimulatorAzul.js';
 
 export default function Simulacao() {
   const [cliente, setCliente] = useState('');
@@ -24,7 +25,7 @@ export default function Simulacao() {
   const [custoGeracaoDisel, setCustoGeracaoDisel] = useState();
 
   const [calc, setCalc] = useState('CONV');
-  const [desconto,setDesconto] = useState('0.25')
+  const [desconto,setDesconto] = useState('0')
   const [icms, setIcms] = useState();
   const [pis, setPis] = useState();
   const [cofin, setCofins] = useState();
@@ -206,7 +207,7 @@ export default function Simulacao() {
               id="desconto"
               value={desconto}
               onChange={(e) => setDesconto(e.target.value)}>
-              <option value="0.25">25%</option>
+              <option value="0">conv</option>
               <option value="0.5">50%</option>
               <option value="1">100%</option>
             </select>
@@ -241,7 +242,8 @@ export default function Simulacao() {
         <br></br>
         <br></br>
         <br></br>
-        <Simulator inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}></Simulator>
+        {(ths==="VERDE") && <SimulatorVerde inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}></SimulatorVerde>}
+        {ths==="AZUL"&& <SimulatorAzul inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}></SimulatorAzul>}
       </InputContainer>
     </div>
   );
