@@ -8,7 +8,7 @@ export default function MercadoLivre(){
     
         try {
             const results = await api.get('simulacao');
-
+            console.log(results)
           } catch (err) {
             alert('Erro, tente novamente.');
           }
@@ -17,8 +17,8 @@ export default function MercadoLivre(){
     return(
         <div>
             <h1> Mercado Livre work in progress</h1>
-            <form onSubmit>
-                
+            <form onSubmit={handleSubmit}>
+                <button type="submit">aaaaaa</button>
             </form>
         </div>
         
