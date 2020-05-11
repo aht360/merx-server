@@ -4,6 +4,8 @@ import { InputContainer } from './styled.js';
 import api from '../../Services/api.js';
 import SimulatorVerde from './SimulatorVerde.js';
 import SimulatorAzul from './SimulatorAzul.js';
+import SimulatorVerdeAPE from './SimulatorVerdeAPE.js'
+import SimulatorVerdeAPE2 from './SimulatorVerdeAPE2'
 
 export default function Simulacao() {
   const [cliente, setCliente] = useState('');
@@ -18,20 +20,30 @@ export default function Simulacao() {
 
   const [demandaP,setDemandaP] = useState();
   const [demandaPu,setDemandaPu] = useState()
-
   const [usaGerador, setUsaGerador] = useState('sim');
   const [geradorACL,setgeradorACL] = useState ('sim')
   const [consumoGerador, setConsumoGerador] = useState('N/A');
   const [custoGeracaoDisel, setCustoGeracaoDisel] = useState();
 
-  const [calc, setCalc] = useState('CONV');
+  const [calc, setCalc] = useState('ML');
   const [desconto,setDesconto] = useState('0')
+
   const [icms, setIcms] = useState();
   const [pis, setPis] = useState();
   const [cofin, setCofins] = useState();
+
+  const [potenciaTransformador,setpotenciaTransformador] = useState()
+  const [tipoInstal,setTipoInstal] = useState('LOCAL')
+  const [criterioUsina,setCriterioUsina] = useState('TRANSFORMADOR')
+  
+  const [inputGeral,setInputGeral] = useState()
+  const [localInstalacao,setLocalInstalacao] = useState('METALICA')
+  const [geracaoEsperada,SetGeracaoEsperada] = useState()
+
   const [inputs, setInputs] = useState({});
   const [resultCativo, setResultCativo] = useState({});
   const [resultLivre, setResultLivre] = useState({});
+  const [ape,setApe] = useState({})
 
   async function handleSimulation(e) {
     e.preventDefault();
@@ -56,14 +68,22 @@ export default function Simulacao() {
       icms,
       pis,
       cofin,
+
+      potenciaTransformador,
+      inputGeral,
+      tipoInstal,
+      criterioUsina,
+      localInstalacao,
+      geracaoEsperada
     };
 
     try {
       const results = await api.post('simulacao', planilha);
-      const { input,ResultCativo,ResultLivre} = results.data;
+      const { input,ResultCativo,ResultLivre,ape } = results.data;
       setInputs(input);
       setResultCativo(ResultCativo);
       setResultLivre(ResultLivre)
+      setApe(ape)
     } catch (err) {
       alert('Erro, tente novamente.');
     }
@@ -213,37 +233,86 @@ export default function Simulacao() {
             </select>
           </span>
 
-          <span>icms:
-            <input
-              type="text"
-              value={icms}
-              onChange={(e) => setIcms(e.target.value)}/>
-            %
-          </span>
-          <span>pis:
-            <input
-              type="text"
-              value={pis}
-              onChange={(e) => setPis(e.target.value)}/>
-            %
-          </span>
-          <span>cofin:
-            <input
-              type="text"
-              value={cofin}
-              onChange={(e) => setCofins(e.target.value)}/>
-            %
-          </span>
+          
+
+          {calc === "APE" &&
+          <div>   
+            <span>Instalação:
+              <select
+                id="tipo-instalacao"
+                value={tipoInstal}
+                onChange={(e) => setTipoInstal(e.target.value)}>
+                <option value="LOCAL">Local</option>
+                <option value="REMOTA">Remota</option>
+              </select>
+            </span>  
+            <span>Critério tamanho Usina:
+              <select
+                id="criterio-usina"
+                value={criterioUsina}
+                onChange={(e) => setCriterioUsina(e.target.value)}>
+                <option value="TRANSFORMADOR">Limitada ao Transformador</option>
+                <option value="DEMANDA">Limitada a Demanda Contratada</option>
+                <option value="AREA">Limitada a Área Disponível</option>
+                <option value="DEFINIDA">Potência definida</option>
+                <option value="100%">100% do Consumo</option>
+                <option value="50%">50% do Consumo</option>
+                <option value="25%">25% do Consumo</option>
+              </select>
+            </span>  
+            <span>Potência transformador:
+              <input
+                type="text"
+                value={potenciaTransformador}
+                onChange={(e) => setpotenciaTransformador(e.target.value)}/>
+            </span>
+            <span>
+              {criterioUsina ==="TRANSFORMADOR" && <span>Limitado ao Transformador:</span>}
+              {criterioUsina ==="DEMANDA" && <span>Limitada a Demanda Contratada:</span>}
+              {criterioUsina ==="AREA" && <span>Limitada a Área Disponível:</span>}
+              {criterioUsina ==="DEFINIDA" && <span>Limitada a Potência Definida:</span>}
+              {criterioUsina ==="100%" && <span>100% do Consumo:</span>}
+              {criterioUsina ==="50%" && <span>50% do Consumo:</span>}
+              {criterioUsina ==="25%" && <span>25% do Consumo:</span>}
+              <input
+                type="text"
+                value={inputGeral}
+                onChange={(e) => setInputGeral(e.target.value)}/>
+            </span>    
+
+            <span>Local de Instalaçao:
+              <select
+                id="local-instalacao"
+                value={localInstalacao}
+                onChange={(e) => setLocalInstalacao(e.target.value)}>
+                <option value="METALICA">Coberta Metalica</option>
+                <option value="FIBRO-CIMENTO">Coberta Fibro Cimento</option>
+                <option value="SOLO">Solo</option>
+              </select>
+            </span> 
+            <span>Geração esperada:
+              <input
+                type="text"
+                value={geracaoEsperada}
+                onChange={(e) => SetGeracaoEsperada(e.target.value)}/>
+            </span>   
+
+
+          </div>
+          }
+
+
           <br></br>
           <br></br>
           <br></br>
           <button>Simular</button>
         </form>
-        <br></br>
-        <br></br>
-        <br></br>
-        {(ths==="VERDE") && <SimulatorVerde inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}></SimulatorVerde>}
-        {ths==="AZUL"&& <SimulatorAzul inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}></SimulatorAzul>}
+        {((ths==="VERDE") && (calc==="ML")) && <SimulatorVerde inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}/>}
+        {((ths==="AZUL" ) && (calc==="ML")) && <SimulatorAzul inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}/>}
+        {((ths==="VERDE") && (calc==="APE") && (tipoInstal==="LOCAL")) && <SimulatorVerdeAPE inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre} ape={ape}/>}
+        {((ths==="VERDE") && (calc==="APE") && (tipoInstal==="REMOTA")) && <SimulatorVerdeAPE2 inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre} ape={ape}/>}
+
+
       </InputContainer>
     </div>
   );

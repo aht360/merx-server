@@ -5,6 +5,13 @@ export const InputContainer = styled.div`
     width:100%;
     display:flex;
     justify-content:space-around;
+
+    div{
+        display:flex;
+        flex-direction:column;
+        justify-content: space-around;
+        align-items:center;
+    }
     
     form{
         width:40%;
@@ -29,4 +36,10 @@ export const Table = styled.div`
     flex-direction:column;
     justify-content:space-evenly;
     align-items:center;
+    
+    table{
+        td{
+            padding: 5px 10px;
+        }
+    }
 `
