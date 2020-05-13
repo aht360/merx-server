@@ -1,34 +1,62 @@
 import styled from 'styled-components'
 
 export const InputContainer = styled.div`
-    margin-top: 80px;
     width:100%;
     display:flex;
-    justify-content:space-around;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
 
     div{
+        margin: 10px 0px;
+        width: 464px;
+        height: 70px;
         display:flex;
         flex-direction:column;
-        justify-content: space-around;
-        align-items:center;
+
+        :last-child{
+            align-self:flex-start;
+        }
+    }   
+
+
+    input,select{
+        background: #FFFFFF;
+        border: 1px solid #646464;
+        box-sizing: border-box;
+        border-radius: 4px;
+        width:100%;
+        height:100%;
+        font-size:20px;
+        padding: 0px 5px; 
     }
-    
-    form{
-        width:40%;
-        height:800px;
-        display:flex;
-        flex-direction:column;
-        justify-content: space-around;
-        align-items:center; 
-        border-right:3px solid black;
-    }
-    input{
-        width:300px;
-        height:40px;
-        font-size:24px;
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0; 
     }
 
 ` 
+export const Body = styled.div`
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    height:100%;
+    
+    form{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+    p{
+        width:80%;
+        text-align:center;
+    }    
+`
+
 export const Table = styled.div`
     width:60%;
     height:800px;
@@ -38,8 +66,15 @@ export const Table = styled.div`
     align-items:center;
     
     table{
-        td{
+        border-collapse: collapse;
+        td,tr,th{
             padding: 5px 10px;
+            border:1px solid black;
+        }
+        th{
+            background:black;   
+            color:white;
         }
     }
+
 `

@@ -25,133 +25,123 @@ export default function SimulatorVerde(props){
                 demandaPu, usaGerador, geradorACL, consumoGerador, desconto,} = inputs
     return(
         <Table>
-            <table border="2px">
+            <table>
                 <tr>
-                    <td>Cativo</td>
-                    <td>Qtd</td>
-                    <td>Tarifa</td>
-                    <td></td>
+                    <th>Cativo</th>
+                    <th>Qtd</th>
+                    <th>Tarifa</th>
+                    <th>Total</th>
                 </tr>
                 <tr>
-                    <td>Demanda:</td>
+                    <th>Demanda:</th>
                     <td>{demanda}</td>
                     <td>{cativoTarifaDemandaPonta}</td>
                     <td>{totalCativoDemandaPonta}</td>
                 </tr>
                 <tr>
-                    <td>Demanda Ultrapassagem:</td>
+                    <th>Demanda Ultrapassagem:</th>
                     <td>{demandaPu}</td>
                     <td>{cativoTarifaUltrapassagemPonta}</td>
                     <td>{totalCativoUltrapassagemPonta}</td>
                 </tr>
                 <tr>
-                    <td>Demanda Fora Ponta:</td>
+                    <th>Demanda Fora Ponta:</th>
                     <td>{demandaP}</td>
                     <td>{cativoTarifaDemandaForaPonta}</td>
                     <td>{totalCativoDemandaPontaFora}</td>
                 </tr>
                 <tr>
-                    <td>Ultrapassagem Fora Ponta:</td>
+                    <th>Ultrapassagem Fora Ponta:</th>
                     <td>{demandaFpu}</td>
                     <td>{cativoTarifaUltrapassagemForaPonta}</td>
                     <td>{totalCativoUltrapassagemForaPonta}</td>
                 </tr>
                 <tr>
-                    <td>Consumo ponta:</td>
+                    <th>Consumo ponta:</th>
                     <td>{consumoP}</td>
                     <td>{cativoTarifaConsumoPonta}</td>
                     <td>{totalCativoConsumoPonta}</td>
                 </tr>
                 <tr>
-                    <td>Consumo ponta Fora:</td>
+                    <th>Consumo ponta Fora:</th>
                     <td>{consumoPf}</td>
                     <td>{cativoTarifaConsumoForaPonta}</td>
                     <td>{totalCativoConsumoForaPonta}</td>
                 </tr>
                 <tr>
-                    <td>Gerador:</td>
+                    <th>Gerador:</th>
                     <td>{qtdGerador}</td>
                     <td>{livreTarifaGerador}</td>
                     <td>{totalCativoConsumoGerador}</td>
                 </tr>
                 <tr>
-                    <tr>Total:{totalCativo}</tr>
-                    <tr></tr>
-                    <tr></tr>
-                    <tr></tr>
+                    <th>Total:</th>
+                    <td></td>
+                    <td></td>
+                    <td>{totalCativo}</td>
                 </tr>
             </table>
-            <table border="2px">
+            <table>
                 <tr>
-                    <td>Livre</td>
-                    <td> Qtd</td>
-                    <td> tarifa</td>
-                    <td>total</td>
+                    <th>Livre</th>
+                    <th> Qtd</th>
+                    <th> tarifa</th>
+                    <th>total</th>
                 </tr>
                 <tr>
-                    <td>Demanda:</td>
+                    <th>Demanda:</th>
                     <td>{livreDemanda}</td>
                     <td>{livreTarifaDemanda}</td>
                     <td>{totalLivreDemanda}</td>
                 </tr>
                 <tr>
-                    <td>Consumo Ponta:</td>
+                    <th>Consumo Ponta:</th>
                     <td>{livreConsumoPonta}</td>
                     <td>{livreTarifaConsumoPonta}</td>
                     <td>{totalLivreConsumoPonta}</td>
                 </tr>
                 <tr>
-                    <td>Consumo Fora Ponta:</td>
+                    <th>Consumo Fora Ponta:</th>
                     <td>{livreConsumoForaPonta}</td>
                     <td>{livreTarifaConsumoForaPonta}</td>
                     <td>{totalLivreConsumoForaPonta}</td>
                 </tr>
                 <tr>
-                    <td>Gerador:</td>
+                    <th>Gerador:</th>
                     <td>{livreGerador}</td>
                     <td>{livreTarifaGerador}</td>
                     <td>{totalLivreGerador}</td>
                 </tr>
+
                 <tr>
-                    <td>x</td>
-                    <td>x</td>
-                    <td>x</td>
-                    <td>x</td>
-                </tr>
-                <tr>
-                    <td>Energia ACL:</td>
+                    <th>Energia ACL:</th>
                     <td>{energiaACL}</td>
                     <td>{energiaACLTarifa}</td>
                     <td>{totalEnergiaACL}</td>
                 </tr>
                 <tr>
-                    <td>ICMS</td>
-                    <td> </td>
-                    <td>{livreIcms}</td>
+                    <th>ICMS:</th>
+                    <td></td>
+                    <td>{livreIcms}</td>    
                     <td>{totalICMS}</td>
                 </tr>
+
                 <tr>
+                    <th>Total Livre:</th>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Total Livre:</td>
-                    <td>xx</td>
-                    <td>xx</td>
                     <td>{totalLivre}</td>
                 </tr>
                 <tr>
-                    <td>Economia:</td>
-                    <td>xx</td>
-                    <td>xx</td>
+                    <th>Economia:</th>
+                    <td></td>
+                    <td></td>
                     <td>{economia}</td>
                 </tr>
                 <tr>
-                    <td>Porcetagem:</td>
-                    <td>xx</td>
-                    <td>xx</td>
+                    <th>Porcetagem:</th>
+                    <td></td>
+                    <td></td>
                     <td>{economiaPorcetagem}</td>
                 </tr>
             </table>

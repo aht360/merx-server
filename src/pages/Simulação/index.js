@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from '../../Components/NavBar/navBar.js';
-import { InputContainer } from './styled.js';
+import { InputContainer,Body } from './styled.js';
 import api from '../../Services/api.js';
 import SimulatorVerde from './SimulatorVerde.js';
 import SimulatorAzul from './SimulatorAzul.js';
@@ -40,6 +40,7 @@ export default function Simulacao() {
   const [localInstalacao,setLocalInstalacao] = useState('METALICA')
   const [geracaoEsperada,SetGeracaoEsperada] = useState()
 
+  const [show,setShow] = useState(false);
   const [inputs, setInputs] = useState({});
   const [resultCativo, setResultCativo] = useState({});
   const [resultLivre, setResultLivre] = useState({});
@@ -91,229 +92,210 @@ export default function Simulacao() {
   return (
     <div>
       <NavBar />
-      <InputContainer>
-        <form onSubmit={handleSimulation}>
-          <span>Cliente:
-            <input
-              type="text"
-              value={cliente}
-              onChange={(e) => setCliente(e.target.value)}/>
-          </span>
-          <span>Cnpj:
-            <input
-              type="text"
-              value={cnpj}
-              onChange={(e) => setCnpj(e.target.value)}/>
-          </span>
+      <Body>
+        <h1>Simule sua economia</h1>
+        <br></br><br></br>
+        <p>Em um cenário extremamente competitivo, é fundamental encontrar alternativas econômicas para redução de custos.</p>
+        <br></br>
+        <p>Preencha o formulário abaixo e tenha em mãos um detalhado estudo comparativo entre Mercado Livre de Energia e Mercado Cativo, comprovando possibilidades de redução de custos adequadas para a sua empresa.</p>
+        <br></br>
+        <br></br>
+        <h2>Dados Empresariais</h2>
+        <br></br><br></br>
+          <form onSubmit={handleSimulation}>
+            <InputContainer>
+            <div>
+              <b>Nome</b>
+              <input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={cliente} onChange={(e) => setCliente(e.target.value)} placeholder="Ex: MerxEnergia"/>
+            </div>
 
-          <span>Distribuidora:
-            <select
-              id="distribuidora"
-              value={distribuidora}
-              onChange={(e) => setDistribuidora(e.target.value)}>
-              <option value="CELPE">CELPE</option>
-              <option value="CEAL">CEAL</option>
-              <option value="CEMAR">CEMAR</option>
-              <option value="CEPISA">CEPISA</option>
-              <option value="COELBA">COELBA</option>
-              <option value="COSERN">COSERN</option>
-              <option value="ENEL CE">ENEL CE</option>
-              <option value="EPB">EPB</option>
-              <option value="ESE">ESE</option>
-            </select>
-          </span>
+            <div>
+              <b>Email</b>
+              <input type="email" placeholder="Ex: seuEmail@outlook.com"/>
+            </div>
 
-          <span>Ths:
-            <select
-              id="ths"
-              value={ths}
-              onChange={(e) => setThs(e.target.value)}>
-              <option value="VERDE">Verde</option>
-              <option value="AZUL">Azul</option>
-            </select>
-          </span>
-          <span>Grupo Tarifário:
-            <select
-              id="grupo-tarifa"
-              value={grupoTarifa}
-              onChange={(e) => setGrupoTarifa(e.target.value)}>
-              <option value="A4">A4</option>
-              <option value="A3">A3</option>
-            </select>
-          </span>
-          <br></br>
+            <div>
+              <b>CNPJ</b>
+              <input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={cnpj} onChange={(e) => setCnpj(e.target.value)}/>
+            </div>
 
-          <span>Demanda:
-            <input
-              type="text"
-              value={demanda}
-              onChange={(e) => setDemanda(e.target.value)}/>
-            kW
-          </span>
-          <span>Demanda Fora Ponta Ultrapassagem:
-            <input
-              type="text"
-              value={demandaFpu}
-              onChange={(e) => setDemandaFpu(e.target.value)}/>
-            kW
-          </span>
+            <div>
+              <b>Fone</b>
+              <input type="tel" placeholder="Ex: (81) 30192097"/>
+            </div>
 
-          <span>Consumo de Ponta:
-            <input
-              type="text"
-              value={consumoP}
-              onChange={(e) => setConsumoP(e.target.value)}/>
-            kWh
-          </span>
-          <span>Consumo Fora de Ponta:
-            <input
-              type="text"
-              value={consumoPf}
-              onChange={(e) => setConsumoPf(e.target.value)}/>
-            kWh
-          </span>
-          <br></br>
-          {(ths==="AZUL") && <span>Demanda Ponta:<input type="text" value={demandaP} onChange={(e) => setDemandaP(e.target.value)}/></span>}
-          {(ths==="AZUL") && <span>Demanda Ponta Ultrapassagem:<input type="text" value={demandaPu} onChange={(e) => setDemandaPu(e.target.value)}/></span>}
-          
-          <span>Usa Gerador:
-            <select
-              id="usa-gerador"
-              value={usaGerador}
-              onChange={(e) => setUsaGerador(e.target.value)}>
-              <option value="sim">Sim</option>
-              <option value="nao">Não</option>
-            </select>
-          </span>
-          <br></br>
-
-          <span>Gerador no ACL:
-            <select
-              id="gerador-acl"
-              value={geradorACL}
-              onChange={(e) => setgeradorACL(e.target.value)}>
-              <option value="sim">Sim</option>
-              <option value="nao">Não</option>
-            </select>
-          </span>
-          <br></br>
-
-          <span>Consumo Gerador:
-            <input
-              type="text"
-              value={consumoGerador}
-              onChange={(e) => setConsumoGerador(e.target.value)}/>
-          </span>
-          <span>Custo da Geração Disel:
-            <input
-              type="text"
-              value={custoGeracaoDisel}
-              onChange={(e) => setCustoGeracaoDisel(e.target.value)}/>
-          </span>
-          <br></br>
-          
-
-          <span>Tipo de calculo:
-            <select
-              id="tipo-calc"
-              value={calc}
-              onChange={(e) => setCalc(e.target.value)}>
-              <option value="ML">Mercado Livre</option>
-              <option value="APE">Autoprodutor</option>
-            </select>
-          </span>
-          <span>DESCONTO:
-            <select
-              id="desconto"
-              value={desconto}
-              onChange={(e) => setDesconto(e.target.value)}>
-              <option value="0">conv</option>
-              <option value="0.5">50%</option>
-              <option value="1">100%</option>
-            </select>
-          </span>
-
-          
-
-          {calc === "APE" &&
-          <div>   
-            <span>Instalação:
-              <select
-                id="tipo-instalacao"
-                value={tipoInstal}
-                onChange={(e) => setTipoInstal(e.target.value)}>
-                <option value="LOCAL">Local</option>
-                <option value="REMOTA">Remota</option>
+            <div>
+              <b>Distribuidora</b>
+              <select id="distribuidora" value={distribuidora} onChange={(e) => setDistribuidora(e.target.value)}>
+                <option value="CELPE">CELPE</option>
+                <option value="CEAL">CEAL</option>
+                <option value="CEMAR">CEMAR</option>
+                <option value="CEPISA">CEPISA</option>
+                <option value="COELBA">COELBA</option>
+                <option value="COSERN">COSERN</option>
+                <option value="ENEL CE">ENEL CE</option>
+                <option value="EPB">EPB</option>
+                <option value="ESE">ESE</option>
               </select>
-            </span>  
-            <span>Critério tamanho Usina:
-              <select
-                id="criterio-usina"
-                value={criterioUsina}
-                onChange={(e) => setCriterioUsina(e.target.value)}>
-                <option value="TRANSFORMADOR">Limitada ao Transformador</option>
-                <option value="DEMANDA">Limitada a Demanda Contratada</option>
-                <option value="AREA">Limitada a Área Disponível</option>
-                <option value="DEFINIDA">Potência definida</option>
-                <option value="100%">100% do Consumo</option>
-                <option value="50%">50% do Consumo</option>
-                <option value="25%">25% do Consumo</option>
+            </div>
+
+            <div>
+              <b>Ths</b>
+              <select id="ths" value={ths} onChange={(e) => setThs(e.target.value)}>
+                <option value="VERDE">Verde</option>
+                <option value="AZUL">Azul</option>
               </select>
-            </span>  
-            <span>Potência transformador:
-              <input
-                type="text"
-                value={potenciaTransformador}
-                onChange={(e) => setpotenciaTransformador(e.target.value)}/>
-            </span>
-            <span>
-              {criterioUsina ==="TRANSFORMADOR" && <span>Limitado ao Transformador:</span>}
-              {criterioUsina ==="DEMANDA" && <span>Limitada a Demanda Contratada:</span>}
-              {criterioUsina ==="AREA" && <span>Limitada a Área Disponível:</span>}
-              {criterioUsina ==="DEFINIDA" && <span>Limitada a Potência Definida:</span>}
-              {criterioUsina ==="100%" && <span>100% do Consumo:</span>}
-              {criterioUsina ==="50%" && <span>50% do Consumo:</span>}
-              {criterioUsina ==="25%" && <span>25% do Consumo:</span>}
-              <input
-                type="text"
-                value={inputGeral}
-                onChange={(e) => setInputGeral(e.target.value)}/>
-            </span>    
+            </div>
 
-            <span>Local de Instalaçao:
-              <select
-                id="local-instalacao"
-                value={localInstalacao}
-                onChange={(e) => setLocalInstalacao(e.target.value)}>
-                <option value="METALICA">Coberta Metalica</option>
-                <option value="FIBRO-CIMENTO">Coberta Fibro Cimento</option>
-                <option value="SOLO">Solo</option>
+            <div>
+              <b>Grupo Tarifário</b>
+              <select id="grupo-tarifa" value={grupoTarifa} onChange={(e) => setGrupoTarifa(e.target.value)}>
+                <option value="A4">A4</option>
+                <option value="A3">A3</option>
               </select>
-            </span> 
-            <span>Geração esperada:
-              <input
-                type="text"
-                value={geracaoEsperada}
-                onChange={(e) => SetGeracaoEsperada(e.target.value)}/>
-            </span>   
+            </div>
+            <div>
+              <b>Tipo de calculo</b>
+              <select id="grupo-tarifa" value={calc} onChange={(e) => setCalc(e.target.value)}>
+                <option value="ML">Mercado Livre</option>
+                <option value="APE">Autroprodutor</option>
+              </select>               
+            </div>
+             
+            </InputContainer>
+            <br></br><br></br>
+              {calc === "ML" && <h2>Mercado Livre</h2>}
+              {calc === "APE" && <h2>Autroprodutor</h2>}
+            <br></br><br></br>
+            <InputContainer>
+            <div>
+              <b>Demanda</b>
+              <input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={demanda} onChange={(e) => setDemanda(e.target.value.replace(',','.'))}/>
+            </div>
 
+            <div>
+              <b>Demanda Fora Ponta Ultrapassagem</b>
+              <input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={demandaFpu} onChange={(e) => setDemandaFpu(e.target.value.replace(',','.'))}/>
+            </div>
 
-          </div>
-          }
+            <div>
+              <b>Consumo de Ponta</b>
+              <input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={consumoP} onChange={(e) => setConsumoP(e.target.value.replace(',','.'))}/>
+              
+            </div>
 
+            <div>
+              <b>Consumo Fora de Ponta</b>
+              <input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={consumoPf} onChange={(e) => setConsumoPf(e.target.value.replace(',','.'))}/>            
+              
+            </div>
+            
+            {(ths==="AZUL") && <div><b>Demanda Ponta</b><input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={demandaP} onChange={(e) => setDemandaP(e.target.value.replace(',','.'))}/></div>}
+            {(ths==="AZUL") && <div><b>Demanda Ponta Ultrapassagem</b><input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={demandaPu} onChange={(e) => setDemandaPu(e.target.value.replace(',','.'))}/></div>}
+            
+            <div>
+              <b>Usa Gerador</b>
+              <select id="usa-gerador" value={usaGerador} onChange={(e) => setUsaGerador(e.target.value.replace(',','.'))}>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+              </select>
+            </div>
 
-          <br></br>
-          <br></br>
-          <br></br>
-          <button>Simular</button>
-        </form>
-        {((ths==="VERDE") && (calc==="ML")) && <SimulatorVerde inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}/>}
-        {((ths==="AZUL" ) && (calc==="ML")) && <SimulatorAzul inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}/>}
-        {((ths==="VERDE") && (calc==="APE") && (tipoInstal==="LOCAL")) && <SimulatorVerdeAPE inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre} ape={ape}/>}
-        {((ths==="VERDE") && (calc==="APE") && (tipoInstal==="REMOTA")) && <SimulatorVerdeAPE2 inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre} ape={ape}/>}
+            <div>
+              <b>Gerador no ACL</b>   
+              <select id="gerador-acl" value={geradorACL} onChange={(e) => setgeradorACL(e.target.value.replace(',','.'))}>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+              </select>
+            </div>
 
+            <div>
+              <b>Consumo Gerador</b>
+              <input type="text" value={consumoGerador} onChange={(e) => setConsumoGerador(e.target.value.replace(',','.'))}/>
+            </div>
 
-      </InputContainer>
+            <div>
+              <b>Custo da Geração Disel</b>
+              <input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={custoGeracaoDisel} onChange={(e) => setCustoGeracaoDisel(e.target.value.replace(',','.'))}/>
+            </div>
+
+            <div>
+              <b>DESCONTO</b>
+              <select id="desconto" value={desconto} onChange={(e) => setDesconto(e.target.value.replace(',','.'))}>
+                <option value="0">conv</option>
+                <option value="0.5">50%</option>
+                <option value="1">100%</option>
+              </select>            
+            </div>
+
+            
+            {calc === "APE" &&<div>
+                <b>Instalação</b>
+                <select id="tipo-instalacao" value={tipoInstal} onChange={(e) => setTipoInstal(e.target.value.replace(',','.'))}>
+                  <option value="LOCAL">Local</option>
+                  <option value="REMOTA">Remota</option>
+                </select>
+              </div>}
+
+              {calc === "APE" &&<div>
+                <b>Critério tamanho Usina</b>  
+                <select id="criterio-usina" value={criterioUsina} onChange={(e) => setCriterioUsina(e.target.value.replace(',','.'))}>
+                  <option value="TRANSFORMADOR">Limitada ao Transformador</option>
+                  <option value="DEMANDA">Limitada a Demanda Contratada</option>
+                  <option value="AREA">Limitada a Área Disponível</option>
+                  <option value="DEFINIDA">Potência definida</option>
+                  <option value="100%">100% do Consumo</option>
+                  <option value="50%">50% do Consumo</option>
+                  <option value="25%">25% do Consumo</option>
+                </select>
+              </div>}
+                
+              {calc === "APE" &&<div>
+                <b>Potência transformador</b>
+                <input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={potenciaTransformador} onChange={(e) => setpotenciaTransformador(e.target.value.replace(',','.'))}/>
+              </div>}
+              
+
+              {calc === "APE" &&<div>
+                <b>
+                  {criterioUsina ==="TRANSFORMADOR" && <b>Limitado ao Transformador</b>}
+                  {criterioUsina ==="DEMANDA" && <b>Limitada a Demanda Contratada</b>}
+                  {criterioUsina ==="AREA" && <b>Limitada a Área Disponível</b>}
+                  {criterioUsina ==="DEFINIDA" && <b>Limitada a Potência Definida</b>}
+                  {criterioUsina ==="100%" && <b>100% do Consumo</b>}
+                  {criterioUsina ==="50%" && <b>50% do Consumo</b>}
+                  {criterioUsina ==="25%" && <b>25% do Consumo</b>}
+                </b>
+                <input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={inputGeral} onChange={(e) => setInputGeral(e.target.value.replace(',','.'))}/>              
+              </div>}
+
+              {calc === "APE" &&<div>
+                <b>Local de Instalaçao</b>
+                <select id="local-instalacao" value={localInstalacao} onChange={(e) => setLocalInstalacao(e.target.value.replace(',','.'))}>
+                  <option value="METALICA">Coberta Metalica</option>
+                  <option value="FIBRO-CIMENTO">Coberta Fibro Cimento</option>
+                  <option value="SOLO">Solo</option>
+                </select>            
+              </div>}    
+
+              {calc === "APE" &&<div>
+                <b>Geração esperada</b> 
+                <input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={geracaoEsperada} onChange={(e) => SetGeracaoEsperada(e.target.value.replace(',','.'))}/>              
+              </div>}
+            </InputContainer>
+            <button type="submit" value={show} onClick={(e)=>setShow(true)}>Simular</button>
+            <br></br>
+            <br></br>
+          </form>
+          
+        {show ===true && 
+        ((ths==="VERDE") && (calc==="ML")) && <SimulatorVerde inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}/> ||
+        ((ths==="AZUL" ) && (calc==="ML")) && <SimulatorAzul inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}/> ||
+        ((ths==="VERDE") && (calc==="APE") && (tipoInstal==="LOCAL")) && <SimulatorVerdeAPE inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre} ape={ape}/> ||
+        ((ths==="VERDE") && (calc==="APE") && (tipoInstal==="REMOTA")) && <SimulatorVerdeAPE2 inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre} ape={ape}/>
+        }
+      </Body>
+      
     </div>
   );
 }
