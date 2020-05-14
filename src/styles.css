@@ -20,6 +20,18 @@ body{
     -webkit-font-smoothing: antialiased;
 }
 
+html::-webkit-scrollbar{
+    width: 6px;
+    background-color:#F4F4F4;
+}
+html::-webkit-scrollbar-track{
+    background-color: #dad7d7;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: #0067CC;
+    border-radius:none;
+}
+
 input,button,textarea{
     font:400px 18px;
     font-family: Encode Sans;

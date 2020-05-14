@@ -92,6 +92,9 @@ export default function Simulacao() {
   return (
     <div>
       <NavBar />
+      <br></br>
+      <br></br>
+      <br></br>
       <Body>
         <h1>Simule sua economia</h1>
         <br></br><br></br>
@@ -287,6 +290,9 @@ export default function Simulacao() {
             <br></br>
             <br></br>
             <button type="submit" onClick={(e)=>setShow(true)}>Simular</button>
+            <br></br>
+            <br></br>
+            <br></br>
           </form>
           
         {show ===true && 

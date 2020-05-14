@@ -55,6 +55,16 @@ export const Body = styled.div`
         width:80%;
         text-align:center;
     }    
+
+    button{
+        border:none;
+        border-bottom:2px solid #000000;
+        padding:5px 10px;
+        color:#000000;
+        background-color:#FFFFFF;
+        font-size:15px;
+        cursor:pointer;
+    }
 `
 
 export const Table = styled.div`
