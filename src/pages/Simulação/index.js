@@ -44,7 +44,7 @@ export default function Simulacao() {
   const [inputs, setInputs] = useState({});
   const [resultCativo, setResultCativo] = useState({});
   const [resultLivre, setResultLivre] = useState({});
-  const [ape,setApe] = useState({})
+  const [ape,setApe] = useState()
 
   async function handleSimulation(e) {
     e.preventDefault();
@@ -106,7 +106,7 @@ export default function Simulacao() {
             <InputContainer>
             <div>
               <b>Nome</b>
-              <input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={cliente} onChange={(e) => setCliente(e.target.value)} placeholder="Ex: MerxEnergia"/>
+              <input type="text"value={cliente} onChange={(e) => setCliente(e.target.value)} placeholder="Ex: MerxEnergia"/>
             </div>
 
             <div>
@@ -283,9 +283,10 @@ export default function Simulacao() {
                 <input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={geracaoEsperada} onChange={(e) => SetGeracaoEsperada(e.target.value.replace(',','.'))}/>              
               </div>}
             </InputContainer>
-            <button type="submit" value={show} onClick={(e)=>setShow(true)}>Simular</button>
+            
             <br></br>
             <br></br>
+            <button type="submit" onClick={(e)=>setShow(true)}>Simular</button>
           </form>
           
         {show ===true && 

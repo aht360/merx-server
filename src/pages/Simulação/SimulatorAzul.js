@@ -16,7 +16,7 @@ export default function SimulatorVerde(props){
     const {livreDemanda,livreDemandaForaPonta,livreConsumoPonta,livreGerador,livreConsumoForaPonta,
         livreTarifaDemanda,livreTarifaDemandaForaPonta,livreTarifaConsumoPonta,livreTarifaConsumoForaPonta,
         livreTarifaGerador,totalLivreDemanda,totalLivreDemandaForaPonta,totalLivreConsumoPonta,totalLivreConsumoForaPonta,
-        totalLivreGerador,energiaACL,energiaACLTarifa,totalEnergiaACL,totalICMS,totalLivre,economia,economiaPorcetagem,livreIcms
+        totalLivreGerador,energiaACL,energiaACLTarifa,totalEnergiaACL,totalICMS,totalLivre,economia,economiaPorcentagem,livreIcms
         }= ResultLivre 
 
 
@@ -142,7 +142,7 @@ export default function SimulatorVerde(props){
                     <th>Porcetagem:</th>
                     <td></td>
                     <td></td>
-                    <td>{economiaPorcetagem}</td>
+                    <td>{economiaPorcentagem}</td>
                 </tr>
             </table>
         </Table>
