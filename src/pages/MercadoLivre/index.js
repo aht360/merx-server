@@ -17,10 +17,6 @@ export default function MercadoLivre(){
     return(
         <div>
             <h1> Mercado Livre work in progress</h1>
-            <form onSubmit={handleSubmit}>
-                <button type="submit">aaaaaa</button>
-            </form>
-            <span>pegou</span>
         </div>
         
     )

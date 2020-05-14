@@ -7,7 +7,8 @@ export default function SimulatorVerde(props){
     const ResultCativo = props.resultCat
     const ResultLivre = props.resultLiv
     const ape = props.ape
-
+    console.log('teste')
+    console.log(ape)
     const {cativoDemandaUnica,cativoDemandaUltrapassagem,cativoConsumoPonta,cativoConsumoPontaFora,qtdGerador,
         totalDemandaUnica,totalDemandaUltrapassagem,totalConsumoPonta,totalcativoConsumoPontaFora,totalGerador
         } = ResultCativo

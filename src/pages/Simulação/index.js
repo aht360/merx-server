@@ -82,10 +82,14 @@ export default function Simulacao() {
     try {
       const results = await api.post('simulacao', planilha);
       const { input,ResultCativo,ResultLivre,ape } = results.data;
-      setInputs(input);
-      setResultCativo(ResultCativo);
-      setResultLivre(ResultLivre)
-      setApe(ape)
+        setInputs(input);
+        setResultCativo(ResultCativo);
+        setResultLivre(ResultLivre)
+        if(ape){
+          setApe(ape)
+        }
+        
+      
     } catch (err) {
       alert('Erro, tente novamente.');
     }
@@ -296,12 +300,11 @@ export default function Simulacao() {
             <br></br>
           </form>
           
-        {show ===true && 
-        ((ths==="VERDE") && (calc==="ML")) && <SimulatorVerde inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}/> ||
-        ((ths==="AZUL" ) && (calc==="ML")) && <SimulatorAzul inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}/> ||
-        ((ths==="VERDE") && (calc==="APE") && (tipoInstal==="LOCAL")) && <SimulatorVerdeAPE inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre} ape={ape}/> ||
-        ((ths==="VERDE") && (calc==="APE") && (tipoInstal==="REMOTA")) && <SimulatorVerdeAPE2 inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre} ape={ape}/>
-        }
+         
+        {(show ===true && (ths==="VERDE") && (calc==="ML")) && <SimulatorVerde inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}/>}
+        {(show ===true && (ths==="AZUL" ) && (calc==="ML")) && <SimulatorAzul inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre}/>}
+        {(show ===true && (ths==="VERDE") && (calc==="APE") && (tipoInstal==="LOCAL")) && <SimulatorVerdeAPE inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre} ape={ape}/>}
+        {(show ===true && (ths==="VERDE") && (calc==="APE") && (tipoInstal==="REMOTA")) && <SimulatorVerdeAPE2 inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre} ape={ape}/>}
       </Body>
       
     </div>
