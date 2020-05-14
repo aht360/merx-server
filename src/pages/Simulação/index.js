@@ -46,7 +46,8 @@ export default function Simulacao() {
   const [resultLivre, setResultLivre] = useState({});
   const [ape,setApe] = useState()
 
-  async function handleSimulation(e) {
+  async function handleSimulation(e) { 
+    setShow(true)
     e.preventDefault();
     const planilha = {
       cliente,
@@ -289,7 +290,7 @@ export default function Simulacao() {
             
             <br></br>
             <br></br>
-            <button type="submit" onClick={(e)=>setShow(true)}>Simular</button>
+            <button type="submit">Simular</button>
             <br></br>
             <br></br>
             <br></br>

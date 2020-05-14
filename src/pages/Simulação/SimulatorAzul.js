@@ -95,6 +95,12 @@ export default function SimulatorVerde(props){
                     <td>{totalLivreDemanda}</td>
                 </tr>
                 <tr>
+                    <th>Demanda Fora Ponta:</th>
+                    <td>{livreDemandaForaPonta}</td>
+                    <td>{livreTarifaDemandaForaPonta}</td>
+                    <td>{totalLivreDemandaForaPonta}</td>
+                </tr>
+                <tr>
                     <th>Consumo Ponta:</th>
                     <td>{livreConsumoPonta}</td>
                     <td>{livreTarifaConsumoPonta}</td>
