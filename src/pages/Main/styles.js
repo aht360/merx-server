@@ -71,7 +71,7 @@ export const Text = styled.div`
     p{ font-size:24px; }
 
 `
-export const ContainerIcon = styled(Containers)`
+export const ContainerIcon = styled.div`
     width:100%;
     height:600px;
     display:flex;
@@ -109,6 +109,85 @@ export const Icons = styled.div`
             width:100px;
             height:100px;
         }      
+    }
+`
+export const ContainerBePartner = styled.div`
+    text-align: justify;
+    display:flex;
+    justify-content: space-evenly;
+
+    h1{ font-size:56px; }
+    .title{
+        width:30%;
+        font-size:18px;
+    }
+    .buttons{
+        font-size:16px;
+        width:50%;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-evenly;
+    }
+
+    
+`
+
+export const BeClient = styled.div`
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+
+    span{ width:30%; }
+
+    button{
+        border:none;
+        margin: 0px 20px;
+        padding:0px 10px;
+        font-size:14px;
+        color:#FFFFFF;
+        background-color:#0067CC;
+        cursor:pointer;
+    }
+    
+
+`
+
+export const Container = styled.div`
+    background:#0067CC;
+    color: #FFFFFF;
+    height:700px;
+    font-size:18px;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items:center;
+
+    button{
+        background:#0067CC;
+        color:#FFFFFF;
+        border: none;
+        cursor:pointer;
+        display:flex;
+        align-items:center;
+    }
+    
+    h1{ width:80%; font-size:56px;}
+
+    div:first-child{
+        margin-left:60px;
+        width:50%;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        span{
+            width:60%;
+            text-align:justify;
+        }
+    }
+    div:last-child{
+        width:749px;
+        height:623px;
+        background:#FFFFFF;
     }
 
 `

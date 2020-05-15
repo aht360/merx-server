@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from '../../Components/NavBar/navBar.js';
+import Footer from '../../Components/Footer/footer'
 import { InputContainer,Body } from './styled.js';
 import api from '../../Services/api.js';
 import SimulatorVerde from './SimulatorVerde.js';
@@ -96,7 +97,7 @@ export default function Simulacao() {
   }
   return (
     <div>
-      <NavBar />
+      <NavBar changeColor="false" />
       <br></br>
       <br></br>
       <br></br>
@@ -306,7 +307,7 @@ export default function Simulacao() {
         {(show ===true && (ths==="VERDE") && (calc==="APE") && (tipoInstal==="LOCAL")) && <SimulatorVerdeAPE inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre} ape={ape}/>}
         {(show ===true && (ths==="VERDE") && (calc==="APE") && (tipoInstal==="REMOTA")) && <SimulatorVerdeAPE2 inputs={inputs} resultCat={resultCativo}  resultLiv={resultLivre} ape={ape}/>}
       </Body>
-      
+      <Footer/>
     </div>
   );
 }

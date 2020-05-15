@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../../Components/NavBar/navBar.js'
-import {Containers,Infos,Body,Pictures,Text,Icons,ContainerIcon} from './styles.js'
+import Footer from '../../Components/Footer/footer.js'
+import {Containers,Infos,Body,Pictures,Text,Icons,ContainerIcon,BeClient,ContainerBePartner,Container} from './styles.js'
 import {IoIosArrowForward} from 'react-icons/io'
 import {Link} from 'react-router-dom'
 import TheMerx from '../../Assets/theMerx.jpg'
@@ -13,6 +14,21 @@ export default function Main(){
     return(
         <Body>
             <NavBar/>
+
+            <Container>
+                <div>
+                    <h1>Conheça os benefícios de ser consumidor livre de energia</h1>
+                    <br></br>
+                    <span>O mercado livre de energia objetiva construir um setor elétrico mais barato, avançado, competitivo e eficiente. Para isso, aliou a tecnologia ao setor de eletricidade, permitindo o acesso a novos modelos de consumo, possibilitando ao usuário ter poder de negociação.</span>
+                    <br></br>
+                    <button>Quero saber mais <IoIosArrowForward size={16}/></button>
+                </div>
+                <div>
+                </div>
+
+            </Container>
+
+
                 <br></br>
                 <Containers width="100%">
                     <Infos>
@@ -38,7 +54,7 @@ export default function Main(){
                 <br></br>
                 <br></br>
                     <Pictures>
-                        <img src={TheMerx} alt="The Merx"/>
+                        <img src={BeProducer} alt="Be Produce"/>
                         <Text>
                             <p>A Merx</p>
                             <span>Entendemos que a sofisticação anda de mãos dadas com a simplicidade. Proporcionamos assistência técnica de forma clara, direta e focada no resultado para nossos Clientes e Parceiros, que fazem parte do time MERX.</span>
@@ -55,7 +71,7 @@ export default function Main(){
                                 diminuição da exposição e variações de preços, aplicação independente da localização geográfica e o direito de comercializar seus excedentes de energia com outros consumidores livres e até mesmo outros agentes de geração.</span>
                             
                         </Text>
-                        <img src={BeProducer} alt="Be Produce"/>
+                        <img src={TheMerx} alt="The Merx"/>
                     </Pictures>
                     <br></br>
                     <br></br>
@@ -79,12 +95,24 @@ export default function Main(){
                                 <span>E a sua gestora? Ainda compete no mercado usando as mesmas técnicas de 30 anos atrás?</span>                                
                             </div>
                         </Icons>
-
                 </ContainerIcon>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
+                <ContainerBePartner>
+                    <div className="title">
+                        <h1>Faça parte da MERX</h1>
+                        <span>Com a MERX, você trabalha com uma empresa séria, focada em oferecer excelência na qualidade de seus produtos e serviços</span>
+                    </div>
+                    <div className="buttons">
+                        <BeClient>
+                            <span>Invista em um dos negócios que mais crescem no Brasil</span>
+                            <button><b>QUERO SER CLIENTE </b></button>
+                        </BeClient>
+                        <BeClient>
+                            <span>Suas necessidades de forma personalizada e objetiva</span>
+                            <button><b>QUERO SER PARCEIRO</b></button>
+                        </BeClient>
+                    </div>
+                </ContainerBePartner>
+                <Footer/>
         </Body>
 
     )
