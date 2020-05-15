@@ -102,11 +102,16 @@ export default function Simulacao() {
       <br></br>
       <br></br>
       <Body>
-        <h1>Simule sua economia</h1>
-        <br></br><br></br>
-        <p>Em um cenário extremamente competitivo, é fundamental encontrar alternativas econômicas para redução de custos.</p>
-        <br></br>
-        <p>Preencha o formulário abaixo e tenha em mãos um detalhado estudo comparativo entre Mercado Livre de Energia e Mercado Cativo, comprovando possibilidades de redução de custos adequadas para a sua empresa.</p>
+        <div className="header">
+          <div>
+            <b>Simule sua economia</b>
+            <p>Em um cenário extremamente competitivo, é fundamental encontrar alternativas econômicas para redução de custos.</p>
+            <p>Preencha o formulário abaixo e tenha em mãos um detalhado estudo comparativo entre Mercado Livre de Energia e Mercado Cativo, comprovando possibilidades de redução de custos adequadas para a sua empresa.</p>
+          </div>
+          <div>
+            a
+          </div>
+        </div>
         <br></br>
         <br></br>
         <h2>Dados Empresariais</h2>
@@ -133,20 +138,31 @@ export default function Simulacao() {
               <input type="tel" placeholder="Ex: (81) 30192097"/>
             </div>
 
-            <div>
-              <b>Distribuidora</b>
-              <select id="distribuidora" value={distribuidora} onChange={(e) => setDistribuidora(e.target.value)}>
-                <option value="CELPE">CELPE</option>
-                <option value="CEAL">CEAL</option>
-                <option value="CEMAR">CEMAR</option>
-                <option value="CEPISA">CEPISA</option>
-                <option value="COELBA">COELBA</option>
-                <option value="COSERN">COSERN</option>
-                <option value="ENEL CE">ENEL CE</option>
-                <option value="EPB">EPB</option>
-                <option value="ESE">ESE</option>
-              </select>
-            </div>
+            </InputContainer>
+            <br></br>
+            <br></br>
+            <br></br>
+            <InputContainer>
+              <div>
+                <input type="button" value="Mercado Livre" className="Button" onClick={(e)=>setCalc("ML")} />
+              </div>
+              <div>
+                <input type="button" value="Autoprodutor" className="Button" onClick={(e)=>setCalc("APE")}/>
+              </div>
+              <div>
+                <b>Distribuidora</b>
+                <select id="distribuidora" value={distribuidora} onChange={(e) => setDistribuidora(e.target.value)}>
+                  <option value="CELPE">Celpe</option>
+                  <option value="CEAL">Ceal</option>
+                  <option value="CEMAR">Cemar</option>
+                  <option value="CEPISA">Cepisa</option>
+                  <option value="COELBA">Coelba</option>
+                  <option value="COSERN">Cosern</option>
+                  <option value="ENEL CE">Enel Ce</option>
+                  <option value="EPB">Epb</option>
+                  <option value="ESE">Ese</option>
+                </select>
+              </div>
 
             <div>
               <b>Ths</b>
@@ -163,20 +179,6 @@ export default function Simulacao() {
                 <option value="A3">A3</option>
               </select>
             </div>
-            <div>
-              <b>Tipo de calculo</b>
-              <select id="grupo-tarifa" value={calc} onChange={(e) => setCalc(e.target.value)}>
-                <option value="ML">Mercado Livre</option>
-                <option value="APE">Autroprodutor</option>
-              </select>               
-            </div>
-             
-            </InputContainer>
-            <br></br><br></br>
-              {calc === "ML" && <h2>Mercado Livre</h2>}
-              {calc === "APE" && <h2>Autroprodutor</h2>}
-            <br></br><br></br>
-            <InputContainer>
             <div>
               <b>Demanda</b>
               <input type="text" pattern="[^a-zA-Z]+" title="Apenas números" value={demanda} onChange={(e) => setDemanda(e.target.value.replace(',','.'))}/>
@@ -231,7 +233,7 @@ export default function Simulacao() {
             <div>
               <b>DESCONTO</b>
               <select id="desconto" value={desconto} onChange={(e) => setDesconto(e.target.value.replace(',','.'))}>
-                <option value="0">conv</option>
+                <option value="0">Conv</option>
                 <option value="0.5">50%</option>
                 <option value="1">100%</option>
               </select>            

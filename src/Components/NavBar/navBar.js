@@ -12,7 +12,7 @@ export default function NavBar(props){
             color = "#0067CC"
             fontColor = "#FFFFFF"
         }else{
-            color = "#FFFFFF"
+            color = "#E5E5E5;"
             fontColor = "#0067CC"
         }
 

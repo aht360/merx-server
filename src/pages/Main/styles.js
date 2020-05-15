@@ -171,7 +171,7 @@ export const Container = styled.div`
         align-items:center;
     }
     
-    h1{ width:80%; font-size:56px;}
+    h1{ width:80%; font-size:45px;}
 
     div:first-child{
         margin-left:60px;
