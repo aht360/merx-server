@@ -155,12 +155,35 @@ export const BeClient = styled.div`
 export const Container = styled.div`
     background:#0067CC;
     color: #FFFFFF;
-    height:700px;
+    height:500px;
     font-size:18px;
     display:flex;
     flex-direction:row;
     justify-content: space-around;
-    align-items:center;
+
+    span{
+        position: sticky;
+    }
+
+    div:first-child{
+        margin-top: 50px;
+        align-self: flex-start;
+        margin-left:60px;
+        width:70%;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    div:last-child{
+        
+        display:flex;
+        align-items: flex-end;
+        width:50%;
+        img{
+            width:100%;
+            height:60%;
+        }
+    }
 
     button{
         background:#0067CC;
@@ -171,23 +194,5 @@ export const Container = styled.div`
         align-items:center;
     }
     
-    h1{ width:80%; font-size:45px;}
-
-    div:first-child{
-        margin-left:60px;
-        width:50%;
-        display:flex;
-        flex-direction:column;
-        align-items:flex-start;
-        span{
-            width:60%;
-            text-align:justify;
-        }
-    }
-    div:last-child{
-        width:749px;
-        height:623px;
-        background:#FFFFFF;
-    }
-
+    h1{ width:100%; font-size:44px;}
 `

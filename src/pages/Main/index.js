@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactTypingEffect from 'react-typing-effect';
 import NavBar from '../../Components/NavBar/navBar.js'
 import Footer from '../../Components/Footer/footer.js'
 import {Containers,Infos,Body,Pictures,Text,Icons,ContainerIcon,BeClient,ContainerBePartner,Container} from './styles.js'
@@ -9,26 +10,36 @@ import BeProducer from '../../Assets/beProducer.jpg'
 import Apartament from '../../Assets/apartment.svg'
 import Radar from '../../Assets/radar.svg'
 import Arrows from '../../Assets/arrows.svg'
+import Pc from '../../Assets/Pc.png'
 
 export default function Main(){
+
+    var phrases = ["Escolha seu fornecedor","Negocie sua energia","Faça suas cotações de Energia",
+                  "Analise seus dados","Simule sua economia","Conheça mais Sobre sobre"]
+
+
     return(
         <Body>
             <NavBar/>
 
-            <Container>
+            <Container>         
                 <div>
-                    <h1>Conheça os benefícios de ser consumidor livre de energia</h1>
+                    <h1><ReactTypingEffect text={phrases} eraseDelay="2000"/> no mercado livre de energia.</h1>
                     <br></br>
-                    <span>O mercado livre de energia objetiva construir um setor elétrico mais barato, avançado, competitivo e eficiente. Para isso, aliou a tecnologia ao setor de eletricidade, permitindo o acesso a novos modelos de consumo, possibilitando ao usuário ter poder de negociação.</span>
+                    <span>Nós criamos uma plataforma para lhe dar todo o controle da sua performance e rentabilidade, entre em contato conosco e nós cuidamos de todo o resto.</span>
                     <br></br>
-                    <button>Quero saber mais <IoIosArrowForward size={16}/></button>
+                    <button>Faça suas cotações <IoIosArrowForward size={16}/></button>
                 </div>
                 <div>
+                    <img src={Pc} alt="pc"/>
                 </div>
 
             </Container>
 
-
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
                 <br></br>
                 <Containers width="100%">
                     <Infos>
