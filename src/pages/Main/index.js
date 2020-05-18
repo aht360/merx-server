@@ -14,7 +14,7 @@ import Pc from '../../Assets/Pc.png'
 
 export default function Main(){
 
-    var phrases = ["Escolha seu fornecedor","Negocie sua energia","Realize suas cotações de Energia",
+    var phrases = ["Escolha seu fornecedor","Negocie sua energia","Realize suas cotações",
                   "Analise seus dados","Simule sua economia","Conheça mais sobre,"]
 
 
@@ -25,7 +25,7 @@ export default function Main(){
             <Container>         
                 <div>
                     <div>
-                        <b><ReactTypingEffect text={phrases} eraseDelay="2000" speed="100"/>
+                        <b><ReactTypingEffect text={phrases} eraseDelay="2000" speed="50"/>
                         <br></br> no mercado livre de energia.</b>
                     </div>
                     <br></br>
@@ -54,7 +54,7 @@ export default function Main(){
                     <Infos>
                         <h2>Mercado Livre de Energia</h2>
                         <br></br>
-                        <p>É um ambiente de comercialização onde o consumidor pode escolher seu fornecedor de energia de energia, além de receber vários incentivos e até vender sua energia excedente. As economias médias chegam a 30% dependendo do perfil de consumo e outras condições específicas de cada consumidor.</p>           
+                        <p>É um ambiente de comercialização onde o consumidor pode escolher seu fornecedor de energia elétrica, além de receber vários incentivos e até vender sua energia excedente. As economias médias chegam a 30% dependendo do perfil de consumo e outras condições específicas de cada consumidor.</p>           
                         <br></br>
                         <Link to ="/mercado_livre"><button><b>Saiba Mais</b><IoIosArrowForward size={16}/></button></Link>
                     </Infos>
