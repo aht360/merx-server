@@ -25,7 +25,7 @@ export default function Main(){
             <Container>         
                 <div>
                     <div>
-                        <b><ReactTypingEffect text={phrases} eraseDelay="2000"/>
+                        <b><ReactTypingEffect text={phrases} eraseDelay="2000" speed="100"/>
                         <br></br> no mercado livre de energia.</b>
                     </div>
                     <br></br>
@@ -40,7 +40,10 @@ export default function Main(){
                 </div>
 
             </Container>
-
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
