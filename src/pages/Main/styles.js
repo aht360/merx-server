@@ -162,7 +162,6 @@ export const Container = styled.div`
     justify-content: space-around;
 
     div:first-child{
-        background: yellow;
         align-self: flex-start;
         margin-left:60px;
         width:70%;
