@@ -112,18 +112,26 @@ export default function Main(){
                             </div>
                         </Icons>
                 </ContainerIcon>
+
                 <ContainerBePartner>
                     <div className="title">
-                        <h1>Faça parte da MERX</h1>
-                        <span>Com a MERX, você trabalha com uma empresa séria, focada em oferecer excelência na qualidade de seus produtos e serviços</span>
+                        <b>Faça parte da MERX</b>
+                        <br></br>
+                        <br></br>
+                        <p>Com a MERX, você trabalha com uma empresa séria, focada em oferecer excelência 
+                            na qualidade de seus produtos e serviços</p>
                     </div>
                     <div className="buttons">
                         <BeClient>
                             <span>Invista em um dos negócios que mais crescem no Brasil</span>
-                            <button><b>QUERO SER CLIENTE </b></button>
+                            <button><b>QUERO SER UM INVESTIDOR  </b></button>
                         </BeClient>
                         <BeClient>
                             <span>Suas necessidades de forma personalizada e objetiva</span>
+                            <button><b>QUERO SER UM CLIENTE</b></button>
+                        </BeClient>
+                        <BeClient>
+                            <span>Leve nossas soluções para seus clientes</span>
                             <button><b>QUERO SER PARCEIRO</b></button>
                         </BeClient>
                     </div>

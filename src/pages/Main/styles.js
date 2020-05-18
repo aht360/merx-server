@@ -112,43 +112,46 @@ export const Icons = styled.div`
     }
 `
 export const ContainerBePartner = styled.div`
-    text-align: justify;
+    width:100%;
+    height:400px;
     display:flex;
     justify-content: space-evenly;
-
-    h1{ font-size:56px; }
+    align-items: center;
     .title{
-        width:30%;
-        font-size:18px;
+        width:35%;
+        b{ font-size:56px;}
+        p{width:80%; font-size:18px;}
     }
     .buttons{
-        font-size:16px;
-        width:50%;
-        display:flex;
-        flex-direction:column;
-        justify-content:space-evenly;
+        width:45%;
+        height:50%;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
     }
 
     
 `
 
 export const BeClient = styled.div`
+    width:100%;
+    height:100%;
     display:flex;
-    flex-direction:row;
-    justify-content:center;
+    justify-content:flex-start;
+    align-items:center;
+    span{width:40%;}
 
-    span{ width:30%; }
 
     button{
-        border:none;
+        width:220px;
         margin: 0px 20px;
-        padding:0px 10px;
-        font-size:14px;
+        padding:10px 15px;
+        background:#0067CC;
         color:#FFFFFF;
-        background-color:#0067CC;
+        border: none;
         cursor:pointer;
+        display:flex;
     }
-    
 
 `
 
