@@ -6,7 +6,7 @@ export const Body = styled.div`
     height:100%;
     .branco{
         margin-top:-50px;
-        background:#E5E5E5;
+        background:#FFFFFF;
         height:60px;
         width:100%;
     }
@@ -59,6 +59,7 @@ export const Pictures = styled.div`
     flex-direction:row;
     justify-content:space-around;
     align-items: center;
+    background:#F4F4F4;
 
     img{
         width:40%;

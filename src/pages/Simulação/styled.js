@@ -30,7 +30,7 @@ export const InputContainer = styled.div`
     input.Button{
         border:none;
         border-bottom:2px solid  #646464;
-        background:#E5E5E5;
+        background:#FFFFFF;
         color:#646464;
         padding: 0px 120px;
         border-radius:0px;
