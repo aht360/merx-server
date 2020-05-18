@@ -24,11 +24,16 @@ export default function Main(){
 
             <Container>         
                 <div>
-                    <h1><ReactTypingEffect text={phrases} eraseDelay="2000"/> no mercado livre de energia.</h1>
+                    <div>
+                        <b><ReactTypingEffect text={phrases} eraseDelay="2000"/>
+                        <br></br> no mercado livre de energia.</b>
+                    </div>
                     <br></br>
-                    <span>Nós criamos uma plataforma para lhe dar todo o controle da sua performance e rentabilidade, entre em contato conosco e nós cuidamos de todo o resto.</span>
-                    <br></br>
-                    <button>Faça suas cotações <IoIosArrowForward size={16}/></button>
+                    <div>
+                        <span>Nós criamos uma plataforma para lhe dar todo o controle da sua performance e rentabilidade, entre em contato conosco e nós cuidamos de todo o resto</span>
+                        <br></br>
+                        <button>Faça suas cotações <IoIosArrowForward size={16}/></button>
+                    </div>
                 </div>
                 <div>
                     <img src={Pc} alt="pc"/>

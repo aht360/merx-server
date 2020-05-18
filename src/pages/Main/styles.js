@@ -161,18 +161,23 @@ export const Container = styled.div`
     flex-direction:row;
     justify-content: space-around;
 
-    span{
-        position: sticky;
-    }
-
     div:first-child{
-        margin-top: 50px;
+        background: yellow;
         align-self: flex-start;
         margin-left:60px;
         width:70%;
+        height:100%;
         display:flex;
         flex-direction:column;
+        justify-content: space-evenly;
         align-items:flex-start;
+        div{
+            height:50%;
+            width:100%;
+            display: flex;
+            flex-direction: column;
+            button{ align-self:flex-start; }
+        }
     }
     div:last-child{
         
@@ -194,5 +199,5 @@ export const Container = styled.div`
         align-items:center;
     }
     
-    h1{ width:100%; font-size:44px;}
+    b{font-size:44px;}
 `
