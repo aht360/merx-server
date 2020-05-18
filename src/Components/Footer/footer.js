@@ -11,7 +11,7 @@ export default function Footer(){
         <Margin>
             <FooterDiv>
                 <img src={Logo} alt="Logo"/>
-                <span><RiMapPinLine/>Rua Ministro Nelson Hungria, 0000</span>
+                <span><RiMapPinLine/>Rua Ministro Nelson Hungria, 180</span>
                 <span><RiPhoneLine/>+55 81 30192097</span>
                 <span><FaWhatsapp/>+55 81 986665303</span>
                 <span>Recife - PE</span>
@@ -21,7 +21,7 @@ export default function Footer(){
             <br></br>
             <br></br>
             <br></br>
-            <Span>2020 | A MERX é uma plataforma unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis e.</Span>
+            <Span>2020 | A MERX é uma plataforma de tecnologia que descomplica o mercado de energia  de forma simples, sem carência, sem franquia e sem burocracia.</Span>
             <br></br>
             <br></br>
         </Margin>

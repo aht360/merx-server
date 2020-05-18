@@ -14,8 +14,8 @@ import Pc from '../../Assets/Pc.png'
 
 export default function Main(){
 
-    var phrases = ["Escolha seu fornecedor","Negocie sua energia","Faça suas cotações de Energia",
-                  "Analise seus dados","Simule sua economia","Conheça mais Sobre sobre"]
+    var phrases = ["Escolha seu fornecedor","Negocie sua energia","Realize suas cotações de Energia",
+                  "Analise seus dados","Simule sua economia","Conheça mais sobre,"]
 
 
     return(
@@ -30,7 +30,7 @@ export default function Main(){
                     </div>
                     <br></br>
                     <div>
-                        <span>Nós criamos uma plataforma para lhe dar todo o controle da sua performance e rentabilidade, entre em contato conosco e nós cuidamos de todo o resto</span>
+                        <span>Nós criamos uma plataforma para lhe dar todo o controle sobre sua performance e rentabilidade, entre em contato conosco e nós cuidamos de todo o resto</span>
                         <br></br>
                         <button>Faça suas cotações <IoIosArrowForward size={16}/></button>
                     </div>
@@ -76,7 +76,7 @@ export default function Main(){
                     <Pictures>
                         <img src={BeProducer} alt="Be Produce"/>
                         <Text>
-                            <p>A Merx</p>
+                            <p>A MERX</p>
                             <span>Entendemos que a sofisticação anda de mãos dadas com a simplicidade. Proporcionamos assistência técnica de forma clara, direta e focada no resultado para nossos Clientes e Parceiros, que fazem parte do time MERX.</span>
                             <span>Oferecemos todo o suporte técnico para que sua empresa.  Aproveite as vantagens do ambiente de contratação livre, tanto como cliente final ou parceiro de negócios.</span>
                         </Text>
@@ -99,16 +99,16 @@ export default function Main(){
                 <ContainerIcon>
                     <div className="title">
                         <h1>A revolução já aconteceu</h1>
-                        <span>A energia muda a forma como você vive</span>
+                        <span>A energia muda a forma como você vive.</span>
                     </div>
                         <Icons>
                             <div>
                                 <img src={Arrows} alt="Data"/>
-                                <span>A quantidade de dados disponível para tomada de decisão já está muito além da capacidade humanada</span>
+                                <span>A quantidade de dados disponível para tomada de decisão já está muito além da capacidade humanada.</span>
                             </div>
                             <div>
                                 <img src={Radar} alt="Track"/>
-                                <span>As melhores gestoras globais já usam drones, inteligência artificial, entre outras para ter sucesso no mercado financeiro</span>
+                                <span>As melhores gestoras globais já usam drones, inteligência artificial, entre outras para ter sucesso no mercado financeiro.</span>
                             </div>
                             <div>
                                 <img src={Apartament} alt="Management"/>
