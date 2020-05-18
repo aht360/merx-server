@@ -4,6 +4,12 @@ import styled from 'styled-components'
 export const Body = styled.div`
     width:100%;
     height:100%;
+    .branco{
+        margin-top:-50px;
+        background:#E5E5E5;
+        height:60px;
+        width:100%;
+    }
 `
 
 

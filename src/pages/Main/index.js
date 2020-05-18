@@ -35,11 +35,12 @@ export default function Main(){
                         <button>Faça suas cotações <IoIosArrowForward size={16}/></button>
                     </div>
                 </div>
+
                 <div>
                     <img src={Pc} alt="pc"/>
                 </div>
-
             </Container>
+            <div className="branco"></div>
                 <br></br>
                 <br></br>
                 <br></br>
