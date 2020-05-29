@@ -5,7 +5,7 @@ exports.TableAzul = function(input,TCP_TUSD,TCFP_TUSD,TCP_E,TCFP_E,TDMP,TDMFP,IC
 //demanda fora ponta = demandaP
     var {cliente,cnpj,distribuidora,ths,grupoTarifa,demanda,demandaFpu,consumoP,consumoPf,demandaP,demandaPu,usaGerador,consumoGerador,geradorACL,
         custoGeracaoDisel,calc,desconto,icms,pis,cofin} = input 
-    
+    console.log(desconto);
     var impostos = 1 - ICMS - COFINS - PIS
     var qtdGerador = (consumoPf*0.10 - consumoP)
 
@@ -60,7 +60,7 @@ exports.TableAzul = function(input,TCP_TUSD,TCFP_TUSD,TCP_E,TCFP_E,TDMP,TDMFP,IC
     } 
     var livreConsumoForaPonta = consumoPf
 
-    var livreTarifaDemanda = (1-desconto)*TDMP/impostos
+    var livreTarifaDemanda = TDMP/impostos
     var livreTarifaDemandaForaPonta = (1-desconto)*TDMP/impostos
     var livreTarifaConsumoPonta = TCP_TUSD/impostos/1000
     var livreTarifaConsumoForaPonta = TCFP_TUSD/impostos/1000

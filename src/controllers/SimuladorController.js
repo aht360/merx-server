@@ -16,7 +16,7 @@ exports.Simulation = async (request, response) => {
   if(input.calc === "ML"){
 
 
-    var { TCP_TUSD, TCFP_TUSD, TCP_E, TCFP_E, TDMP, TDMFP, ICMS, COFINS, PIS } = await Tarifa.findOne({ // incomplete db
+    var { TCP_TUSD, TCFP_TUSD, TCP_E, TCFP_E, TDMP, TDMFP, ICMS, COFINS, PIS } = await Tarifa.findOne({
 
       THS: `${input.ths}`,
       GRUPO: `${input.grupoTarifa}`,
