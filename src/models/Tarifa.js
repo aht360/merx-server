@@ -62,4 +62,5 @@ const TarifaSchema = new mongoose.Schema({
         required:true,
     },
 },{timestamps: true})
+
 mongoose.model('Tarifa',TarifaSchema)
