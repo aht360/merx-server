@@ -4,13 +4,31 @@ const authMiddleware = require('../middlewares/auth');
 
 module.exports = {
     
-    async show(req, res){
+    async getId(req, res){
 
         res.send({ 
             ok: true, 
-            user: req.userId,
-            name: req.nome
+            user_id: req.userId
         });
 
+    },
+
+    async getUser(req, res){
+        
+        const { _id }= req.body;
+        console.log(_id)
+        const user = await User.findOne({ _id })
+
+        if(!user){
+            return res.status(400).send({error: 'Não achei usuário com esse ID'});
+        }
+        else{
+            return res.json({
+                user
+            });
+        }
+
+
     }
+
 }

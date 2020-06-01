@@ -1,8 +1,10 @@
 const jwt = require('jsonwebtoken');
 const authConfig = require('../config/auth.json');
 
+const User = require('../models/User');
+
 module.exports = (req, res, next) => {
-    
+
     const authHeader = req.headers.authorization;
 
     if(!authHeader){
@@ -21,13 +23,13 @@ module.exports = (req, res, next) => {
         return res.status(401).send({ error: 'Token malformatted' });
     }
 
-    jwt.verify(token, authConfig.secret, (err, decoded) => {
+    jwt.verify(token, authConfig.secret, async (err, decoded) => {
         if(err){
             return res.status(401).send({ error: 'Token invalid' });
         }
 
         req.userId = decoded.id;
-        
+
         return next();
 
     })

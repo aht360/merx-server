@@ -27,8 +27,10 @@ routes.get('/cleanRegister', SessionController.deleteAll); // delete all users
 routes.post('/authenticate', SessionController.authenticate); // signIn
 routes.post('/getName', SessionController.getName);
 
+
 routes.use(authMiddleware);
-routes.get('/user', UserController.show);
+routes.get('/user', UserController.getId);
+routes.post('/user', UserController.getUser);
 
 
 module.exports = routes
