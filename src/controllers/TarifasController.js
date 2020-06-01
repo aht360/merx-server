@@ -2,6 +2,7 @@ const tarifaXLSX = require("../reader/LeitorXLSX");
 const mongoose = require("mongoose");
 
 require("../models/Tarifa.js");
+
 const Tarifa = mongoose.model("Tarifa");
 
 exports.CadTarifas = async (request, response) => {
