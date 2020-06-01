@@ -19,6 +19,7 @@ routes.get('/cadTarifa', Tarifas.CadTarifas)
 
 
 // Rotas da Pesquisa Mercado Livre
+routes.get('/ResetData', MercadoController.deleteDados)
 routes.get('/DadosCadastrais', MercadoController.CadDados)
 routes.post('/DadosCadastrais', MercadoController.getData)
 

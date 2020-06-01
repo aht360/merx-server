@@ -26,19 +26,37 @@ module.exports = {
 
         const { SiglaAgente } = request.body;
         
-        console.log(SiglaAgente);
+        console.log(SiglaAgente)
 
-        let data = await DadosCadastrais.findOne({ SiglaAgente });
+        let data = await DadosCadastrais.find({ SiglaAgente });
 
         if(!data){
             console.log("Não achei Dados com essa Sigla");
-            return response.status(400).send({error: 'Essa sigla não está no bd'});
+            return response.status(400).json({error: 'Essa sigla não está no bd'});
         }
         else{
             return response.json(data);
         }
 
-    }
+    },
+
+    async deleteDados(req, res){
+        console.log('Deletando BD...')
+        DadosCadastrais.deleteMany({ }, (err) => {
+            //Retornar erro quando não conseguir apagar no banco de dados
+            if(err) return res.status(400).json({
+                error: true,
+                message: "Error: banco de dados não foi corretamente esvaziado!"
+            });
+    
+            //Retornar mensagem de sucesso quando excluir o registro com sucesso no banco de dados
+            return res.json({
+                error: false,
+                message: "Banco de dados de usuários completamente apagado!"
+            });
+        });
+    },
+
 
     
 
