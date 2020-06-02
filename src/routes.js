@@ -22,6 +22,11 @@ routes.get('/cadTarifa', Tarifas.CadTarifas)
 routes.get('/ResetData', MercadoController.deleteDados)
 routes.get('/DadosCadastrais', MercadoController.CadDados)
 routes.post('/DadosCadastrais', MercadoController.getData)
+routes.get('/ShowDadosCadastrais', MercadoController.showAllData)
+
+routes.get('/DadosConsumo', MercadoController.CadConsumo)
+routes.post('/DadosConsumo', MercadoController.getDataConsumo)
+routes.get('/DeleteDadosConsumo', MercadoController.deleteDadosConsumo)
 
 routes.post('/email', Email.sendEmail)
 
