@@ -15,8 +15,10 @@ module.exports = {
 
     async getUser(req, res){
         
-        const { _id }= req.body;
+        const { _id } = req.body;
+
         console.log(_id)
+
         const user = await User.findOne({ _id })
 
         if(!user){
