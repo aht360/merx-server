@@ -11,14 +11,14 @@ module.exports = {
     },
 
     async store(req, res){ // SignUp a new company
-        const { Nome, CNPJ, Sigla, InicioACL, Submercado, Classe, Categoria, AgCC, ContEnerg, GarantCont } = req.body;
+        const { Nome, CNPJ, Sigla, InicioACL, Submercado, Classe, Categoria, AgCC, ContEnerg, GarantCont, EnergiaCheck, DistribuidoraCheck, FinanceiroCheck, CCEECheck, MedicaoCheck, AprovacaoCheck, CustoCativo, CustoLivre, Economia } = req.body;
         
         console.log('Vou cadastrar o CNPJ: ' + CNPJ)
 
         let company = await Company.findOne({ CNPJ });
 
         if(!company){
-            company = await Company.create({ Nome, CNPJ, Sigla, InicioACL, Submercado, Classe, Categoria, AgCC, ContEnerg, GarantCont });
+            company = await Company.create({ Nome, CNPJ, Sigla, InicioACL, Submercado, Classe, Categoria, AgCC, ContEnerg, GarantCont, EnergiaCheck, DistribuidoraCheck, FinanceiroCheck, CCEECheck, MedicaoCheck, AprovacaoCheck, CustoCativo, CustoLivre, Economia });
             console.log("Empresa criada!");
             return res.json({ company });
         }
