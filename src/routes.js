@@ -30,6 +30,11 @@ routes.post('/DadosConsumo', MercadoController.getDataConsumo)
 routes.get('/DeleteDadosConsumo', MercadoController.deleteDadosConsumo)
 
 
+routes.get('/DadosContrato', MercadoController.CadContrato)
+routes.post('/DadosContrato', MercadoController.getDataContrato)
+routes.get('/DadosContratoDelete', MercadoController.deleteDadosContrato)
+
+
 // Rota pra enviar email
 
 routes.post('/email', Email.sendEmail)
