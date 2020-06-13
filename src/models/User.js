@@ -19,10 +19,6 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    cnpj: {
-        type: String,
-        required: true,
-    },
     password: {
         type: String,
         required: true,
@@ -30,6 +26,10 @@ const UserSchema = new mongoose.Schema({
     companyCNPJ: {
         type: String,
         required: true,
+    },
+    Usertype: {
+        type: String,
+        required: true
     }
 });
 

@@ -20,12 +20,12 @@ module.exports = {
     },
 
     async store(req, res){ // SignUp a new user
-        const { nome, email, tel, cpf, cnpj, password, companyCNPJ } = req.body;
+        const { nome, email, tel, cpf, password, companyCNPJ, Usertype } = req.body;
 
         let user = await User.findOne({ email });
 
         if(!user){
-            user = await User.create({ nome, email, tel, cpf, cnpj, password, companyCNPJ });
+            user = await User.create({ nome, email, tel, cpf, password, companyCNPJ, Usertype });
             console.log("Usuário criado!");
             return res.json({
                 user,
